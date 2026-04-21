@@ -1,0 +1,18 @@
+#Zombie Offensive: Catastrophe for Two
+
+
+#	Trained and armed you and your squad member will put your training in action. 100 Elite soldiers were chosen to be sealed in an active outbreak to save humanity. As the mission failed it is up to you to end it before the whole town is deemed as a loss. 
+#	Zombie offensive is unlike a typical zombie shooter, incorporating strategic traversal of the map and collaborative play. Managing resources and calling out attacks are essential to clear maps without hurting your team. In this dark map you will need to use strategic shots to reveal clues and items that will aid you in your mission.
+#	Zombie offensive incorporates netcode for a smooth Two player experience in which timing is key. Additionally, Team Catastrophe will incorporate texture shading that will aid the player in distinguishing zombie types.
+
+
+# Team CatastrophE Roles:
+#	    Hunter - Player: player movement system, Multiplayer implementation.
+
+#			Justin	- Zombie AI: tracking players, advanced and diverse attacks, spawning algorithms.
+			
+#			Juan - Map Creation: Designing map with obstacles, around AI, movement scripts and camera work.
+
+#			Jorge - UI title screen, shaders, lighting and sound effects. The TV screens static and different shader effects for special zombies. 
+
+#			Hippoe - Satisfying gunplay, recoil and other features to promote strategic shooting with team
