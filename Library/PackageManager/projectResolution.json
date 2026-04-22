@@ -1,18 +1,18 @@
 {
   "context": {
-    "projectPath": "C:/Users/snooters/zombie offensive/Packages",
+    "projectPath": "C:/Users/helix/OneDrive/Documents/Repositories/ZombieGame/Packages",
     "unityVersion": "6000.4.1f1"
   },
   "inputs": [
-    "C:\\Users\\snooters\\zombie offensive\\Packages\\manifest.json",
-    "C:\\Users\\snooters\\zombie offensive\\Packages\\packages-lock.json",
+    "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Packages\\manifest.json",
+    "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Packages\\packages-lock.json",
     "C:\\Program Files\\Unity\\Hub\\Editor\\6000.4.1f1\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
     "com.unity.ai.navigation@2.0.11": {
       "name": "com.unity.ai.navigation",
       "displayName": "AI Navigation",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.ai.navigation@78534c21b27d",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.ai.navigation@78534c21b27d",
       "fingerprint": "78534c21b27d2c95f8220f5db8dce95627a32911",
       "editorCompatibility": "6000.0.0a1",
       "version": "2.0.11",
@@ -22,7 +22,7 @@
     "com.unity.collab-proxy@2.11.4": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.collab-proxy@a5329f833fa8",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.collab-proxy@a5329f833fa8",
       "fingerprint": "a5329f833fa805a96ac8b0a1eb09dc64c076b032",
       "editorCompatibility": "2021.3.0f1",
       "version": "2.11.4",
@@ -32,7 +32,7 @@
     "com.unity.feature.development@1.0.2": {
       "name": "com.unity.feature.development",
       "displayName": "Engineering",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.feature.development@767aadbc6eb7",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.feature.development@767aadbc6eb7",
       "fingerprint": "767aadbc6eb72681a4ca807c8fa248e0230a0cef",
       "version": "1.0.2",
       "source": "builtin",
@@ -41,7 +41,7 @@
     "com.unity.ide.rider@3.0.39": {
       "name": "com.unity.ide.rider",
       "displayName": "JetBrains Rider Editor",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.ide.rider@4504839d03f7",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.ide.rider@4504839d03f7",
       "fingerprint": "4504839d03f7a5a4495357084a0ffd6e439892cf",
       "editorCompatibility": "2021.3.0a1",
       "version": "3.0.39",
@@ -51,7 +51,7 @@
     "com.unity.ide.visualstudio@2.0.27": {
       "name": "com.unity.ide.visualstudio",
       "displayName": "Visual Studio Editor",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.ide.visualstudio@dc1ddd4f09b6",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.ide.visualstudio@dc1ddd4f09b6",
       "fingerprint": "dc1ddd4f09b68a99b5dc00185f3b7551294e28a7",
       "editorCompatibility": "2021.3.0a1",
       "version": "2.0.27",
@@ -61,7 +61,7 @@
     "com.unity.ide.vscode@1.2.5": {
       "name": "com.unity.ide.vscode",
       "displayName": "Visual Studio Code Editor",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.ide.vscode@82e68656b7bd",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.ide.vscode@82e68656b7bd",
       "fingerprint": "82e68656b7bdc5da8beb1fbaf1bb4ecf13456d51",
       "editorCompatibility": "2019.2.0a12",
       "version": "1.2.5",
@@ -71,17 +71,27 @@
     "com.unity.multiplayer.center@1.0.1": {
       "name": "com.unity.multiplayer.center",
       "displayName": "Multiplayer Center",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.multiplayer.center@f01f4ba8d00a",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.multiplayer.center@f01f4ba8d00a",
       "fingerprint": "f01f4ba8d00afa4e957bddf0fcd1612a564401ff",
       "editorCompatibility": "6000.0.0a1",
       "version": "1.0.1",
       "source": "builtin",
       "testable": false
     },
+    "com.unity.netcode.gameobjects@2.11.0": {
+      "name": "com.unity.netcode.gameobjects",
+      "displayName": "Netcode for GameObjects",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.netcode.gameobjects@60c1d83693e8",
+      "fingerprint": "60c1d83693e8918c1f1bc9c5fcfa8005d40a2b7f",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "2.11.0",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.test-framework@1.6.0": {
       "name": "com.unity.test-framework",
       "displayName": "Test Framework",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.test-framework@76560ee600cb",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.test-framework@76560ee600cb",
       "fingerprint": "76560ee600cb07c29e08760be4a5c75da65a9d9e",
       "editorCompatibility": "6000.0.44f1",
       "version": "1.6.0",
@@ -91,7 +101,7 @@
     "com.unity.timeline@1.8.11": {
       "name": "com.unity.timeline",
       "displayName": "Timeline",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.timeline@bfd27f8016ff",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.timeline@bfd27f8016ff",
       "fingerprint": "bfd27f8016ffda6a22579ffc468432a96b2cc5b6",
       "editorCompatibility": "2022.3.0a1",
       "version": "1.8.11",
@@ -101,7 +111,7 @@
     "com.unity.ugui@2.0.0": {
       "name": "com.unity.ugui",
       "displayName": "uGUI",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.ugui@d8a2716f3013",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.ugui@d8a2716f3013",
       "fingerprint": "d8a2716f30132e533c8f0cd850b4ba55bd18c2a6",
       "editorCompatibility": "2019.2.0a1",
       "version": "2.0.0",
@@ -111,7 +121,7 @@
     "com.unity.visualscripting@1.9.11": {
       "name": "com.unity.visualscripting",
       "displayName": "Visual Scripting",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.visualscripting@8bed5ad90189",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.visualscripting@8bed5ad90189",
       "fingerprint": "8bed5ad901895f10b7d0e524c4738cab14cef692",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.9.11",
@@ -121,7 +131,7 @@
     "com.unity.modules.accessibility@1.0.0": {
       "name": "com.unity.modules.accessibility",
       "displayName": "Accessibility",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.accessibility",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.accessibility",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -129,7 +139,7 @@
     "com.unity.modules.adaptiveperformance@1.0.0": {
       "name": "com.unity.modules.adaptiveperformance",
       "displayName": "Adaptive Performance",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.adaptiveperformance",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.adaptiveperformance",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -137,7 +147,7 @@
     "com.unity.modules.ai@1.0.0": {
       "name": "com.unity.modules.ai",
       "displayName": "AI",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.ai",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.ai",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -145,7 +155,7 @@
     "com.unity.modules.androidjni@1.0.0": {
       "name": "com.unity.modules.androidjni",
       "displayName": "Android JNI",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.androidjni",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.androidjni",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -153,7 +163,7 @@
     "com.unity.modules.animation@1.0.0": {
       "name": "com.unity.modules.animation",
       "displayName": "Animation",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.animation",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.animation",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -161,7 +171,7 @@
     "com.unity.modules.assetbundle@1.0.0": {
       "name": "com.unity.modules.assetbundle",
       "displayName": "Asset Bundle",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.assetbundle",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.assetbundle",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -169,7 +179,7 @@
     "com.unity.modules.audio@1.0.0": {
       "name": "com.unity.modules.audio",
       "displayName": "Audio",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.audio",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.audio",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -177,7 +187,7 @@
     "com.unity.modules.cloth@1.0.0": {
       "name": "com.unity.modules.cloth",
       "displayName": "Cloth",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.cloth",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.cloth",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -185,7 +195,7 @@
     "com.unity.modules.director@1.0.0": {
       "name": "com.unity.modules.director",
       "displayName": "Director",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.director",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.director",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -193,7 +203,7 @@
     "com.unity.modules.imageconversion@1.0.0": {
       "name": "com.unity.modules.imageconversion",
       "displayName": "Image Conversion",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.imageconversion",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.imageconversion",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -201,7 +211,7 @@
     "com.unity.modules.imgui@1.0.0": {
       "name": "com.unity.modules.imgui",
       "displayName": "IMGUI",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.imgui",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.imgui",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -209,7 +219,7 @@
     "com.unity.modules.jsonserialize@1.0.0": {
       "name": "com.unity.modules.jsonserialize",
       "displayName": "JSONSerialize",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.jsonserialize",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.jsonserialize",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -217,7 +227,7 @@
     "com.unity.modules.particlesystem@1.0.0": {
       "name": "com.unity.modules.particlesystem",
       "displayName": "Particle System",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.particlesystem",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.particlesystem",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -225,7 +235,7 @@
     "com.unity.modules.physics@1.0.0": {
       "name": "com.unity.modules.physics",
       "displayName": "Physics",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.physics",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.physics",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -233,7 +243,7 @@
     "com.unity.modules.physics2d@1.0.0": {
       "name": "com.unity.modules.physics2d",
       "displayName": "Physics 2D",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.physics2d",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.physics2d",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -241,7 +251,7 @@
     "com.unity.modules.screencapture@1.0.0": {
       "name": "com.unity.modules.screencapture",
       "displayName": "Screen Capture",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.screencapture",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.screencapture",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -249,7 +259,7 @@
     "com.unity.modules.terrain@1.0.0": {
       "name": "com.unity.modules.terrain",
       "displayName": "Terrain",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.terrain",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.terrain",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -257,7 +267,7 @@
     "com.unity.modules.terrainphysics@1.0.0": {
       "name": "com.unity.modules.terrainphysics",
       "displayName": "Terrain Physics",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.terrainphysics",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.terrainphysics",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -265,7 +275,7 @@
     "com.unity.modules.tilemap@1.0.0": {
       "name": "com.unity.modules.tilemap",
       "displayName": "Tilemap",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.tilemap",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.tilemap",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -273,7 +283,7 @@
     "com.unity.modules.ui@1.0.0": {
       "name": "com.unity.modules.ui",
       "displayName": "UI",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.ui",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.ui",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -281,7 +291,7 @@
     "com.unity.modules.uielements@1.0.0": {
       "name": "com.unity.modules.uielements",
       "displayName": "UIElements",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.uielements",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.uielements",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -289,7 +299,7 @@
     "com.unity.modules.umbra@1.0.0": {
       "name": "com.unity.modules.umbra",
       "displayName": "Umbra",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.umbra",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.umbra",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -297,7 +307,7 @@
     "com.unity.modules.unityanalytics@1.0.0": {
       "name": "com.unity.modules.unityanalytics",
       "displayName": "Unity Analytics",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.unityanalytics",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.unityanalytics",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -305,7 +315,7 @@
     "com.unity.modules.unitywebrequest@1.0.0": {
       "name": "com.unity.modules.unitywebrequest",
       "displayName": "Unity Web Request",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.unitywebrequest",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.unitywebrequest",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -313,7 +323,7 @@
     "com.unity.modules.unitywebrequestassetbundle@1.0.0": {
       "name": "com.unity.modules.unitywebrequestassetbundle",
       "displayName": "Unity Web Request Asset Bundle",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.unitywebrequestassetbundle",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.unitywebrequestassetbundle",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -321,7 +331,7 @@
     "com.unity.modules.unitywebrequestaudio@1.0.0": {
       "name": "com.unity.modules.unitywebrequestaudio",
       "displayName": "Unity Web Request Audio",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.unitywebrequestaudio",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.unitywebrequestaudio",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -329,7 +339,7 @@
     "com.unity.modules.unitywebrequesttexture@1.0.0": {
       "name": "com.unity.modules.unitywebrequesttexture",
       "displayName": "Unity Web Request Texture",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.unitywebrequesttexture",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.unitywebrequesttexture",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -337,7 +347,7 @@
     "com.unity.modules.unitywebrequestwww@1.0.0": {
       "name": "com.unity.modules.unitywebrequestwww",
       "displayName": "Unity Web Request WWW",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.unitywebrequestwww",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.unitywebrequestwww",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -345,7 +355,7 @@
     "com.unity.modules.vectorgraphics@1.0.0": {
       "name": "com.unity.modules.vectorgraphics",
       "displayName": "Vector Graphics",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.vectorgraphics",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.vectorgraphics",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -353,7 +363,7 @@
     "com.unity.modules.vehicles@1.0.0": {
       "name": "com.unity.modules.vehicles",
       "displayName": "Vehicles",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.vehicles",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.vehicles",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -361,7 +371,7 @@
     "com.unity.modules.video@1.0.0": {
       "name": "com.unity.modules.video",
       "displayName": "Video",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.video",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.video",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -369,7 +379,7 @@
     "com.unity.modules.vr@1.0.0": {
       "name": "com.unity.modules.vr",
       "displayName": "VR",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.vr",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.vr",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -377,7 +387,7 @@
     "com.unity.modules.wind@1.0.0": {
       "name": "com.unity.modules.wind",
       "displayName": "Wind",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.wind",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.wind",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -385,7 +395,7 @@
     "com.unity.modules.xr@1.0.0": {
       "name": "com.unity.modules.xr",
       "displayName": "XR",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.xr",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.xr",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -393,7 +403,7 @@
     "com.unity.modules.subsystems@1.0.0": {
       "name": "com.unity.modules.subsystems",
       "displayName": "Subsystems",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.subsystems",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.subsystems",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -401,7 +411,7 @@
     "com.unity.modules.hierarchycore@1.0.0": {
       "name": "com.unity.modules.hierarchycore",
       "displayName": "Hierarchy Core",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.modules.hierarchycore",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.modules.hierarchycore",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -409,17 +419,37 @@
     "com.unity.ext.nunit@2.0.5": {
       "name": "com.unity.ext.nunit",
       "displayName": "Custom NUnit",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.ext.nunit@d8c07649098d",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.ext.nunit@d8c07649098d",
       "fingerprint": "d8c07649098d3936da4c8ab500960c1776b44592",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.0.5",
       "source": "builtin",
       "testable": false
     },
+    "com.unity.transport@2.7.2": {
+      "name": "com.unity.transport",
+      "displayName": "Unity Transport",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.transport@ed7eca02732f",
+      "fingerprint": "ed7eca02732fbeb5979a71198733269e75f55ec4",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "2.7.2",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.nuget.mono-cecil@1.11.6": {
+      "name": "com.unity.nuget.mono-cecil",
+      "displayName": "Mono Cecil",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.nuget.mono-cecil@ecb9724e46ff",
+      "fingerprint": "ecb9724e46fff855c46a4f37f0a3377a3cfffc06",
+      "editorCompatibility": "2019.4.0a1",
+      "version": "1.11.6",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.editorcoroutines@1.0.1": {
       "name": "com.unity.editorcoroutines",
       "displayName": "Editor Coroutines",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.editorcoroutines@54394ed3283c",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.editorcoroutines@54394ed3283c",
       "fingerprint": "54394ed3283c1d492d6a80602b05b04bd0863f8b",
       "editorCompatibility": "2018.1.0a1",
       "version": "1.0.1",
@@ -429,7 +459,7 @@
     "com.unity.performance.profile-analyzer@1.3.3": {
       "name": "com.unity.performance.profile-analyzer",
       "displayName": "Profile Analyzer",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.performance.profile-analyzer@10347e9ce886",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.performance.profile-analyzer@10347e9ce886",
       "fingerprint": "10347e9ce88626fa1809dc52c30b0de186dcff73",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.3.3",
@@ -439,20 +469,60 @@
     "com.unity.testtools.codecoverage@1.3.0": {
       "name": "com.unity.testtools.codecoverage",
       "displayName": "Code Coverage",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.testtools.codecoverage@19a841221620",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.testtools.codecoverage@19a841221620",
       "fingerprint": "19a8412216200955baa50132d98cb9fe4770e401",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.3.0",
       "source": "registry",
       "testable": false
     },
+    "com.unity.burst@1.8.28": {
+      "name": "com.unity.burst",
+      "displayName": "Burst",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.burst@07790c2d06d9",
+      "fingerprint": "07790c2d06d99e35fe39459bd582a965d07700c4",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "1.8.28",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.collections@6.4.0": {
+      "name": "com.unity.collections",
+      "displayName": "Collections",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.collections@538ace9075bc",
+      "fingerprint": "538ace9075bc08320fd46e69fe74807d5b319ba1",
+      "editorCompatibility": "6000.4.0a1",
+      "version": "6.4.0",
+      "source": "builtin",
+      "testable": false
+    },
+    "com.unity.mathematics@1.3.3": {
+      "name": "com.unity.mathematics",
+      "displayName": "Mathematics",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.mathematics@19a9377c4ffa",
+      "fingerprint": "19a9377c4ffa59370edad3e6a34e4445529badde",
+      "editorCompatibility": "2021.3.0a1",
+      "version": "1.3.3",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.settings-manager@2.1.1": {
       "name": "com.unity.settings-manager",
       "displayName": "Settings Manager",
-      "resolvedPath": "C:\\Users\\snooters\\zombie offensive\\Library\\PackageCache\\com.unity.settings-manager@0b8638c5ce86",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.settings-manager@0b8638c5ce86",
       "fingerprint": "0b8638c5ce86009d785da17b17aaf629047f64ce",
       "editorCompatibility": "2022.3.0a1",
       "version": "2.1.1",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.test-framework.performance@3.3.0": {
+      "name": "com.unity.test-framework.performance",
+      "displayName": "Performance testing API",
+      "resolvedPath": "C:\\Users\\helix\\OneDrive\\Documents\\Repositories\\ZombieGame\\Library\\PackageCache\\com.unity.test-framework.performance@a902ab7fb342",
+      "fingerprint": "a902ab7fb342bba0c712bdaafd89b466b72bf047",
+      "editorCompatibility": "2020.3.0a1",
+      "version": "3.3.0",
       "source": "registry",
       "testable": false
     }
