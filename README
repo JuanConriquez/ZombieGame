@@ -7,7 +7,7 @@
 
 
 # Team CatastrophE Roles:
-#	    Hunter - Player: player movement system, Multiplayer implementation.
+#	    Hunter - Multiplayer implementation.
 
 #			Justin	- Zombie AI: tracking players, advanced and diverse attacks, spawning algorithms.
 			
@@ -15,4 +15,4 @@
 
 #			Jorge - UI title screen, shaders, lighting and sound effects. The TV screens static and different shader effects for special zombies. 
 
-#			Nathan - Satisfying gunplay, recoil and other features to promote strategic shooting with team
+#			Nathan - Satisfying gunplay, recoil and other features to promote strategic shooting with team, Player system
