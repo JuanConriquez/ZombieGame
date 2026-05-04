@@ -1,33 +1,253 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/Users/helix/OneDrive/Documents/Repositories/ZombieGame/Packages/manifest.json
+    m_FilePath: C:/Users/Nate/Documents/GitHub/ZombieGame/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639124217908333848
-    m_Hash: 1414062643
+      ticks: 639133922912705780
+    m_Hash: 130520090
   m_LockFileStatus:
-    m_FilePath: C:/Users/helix/OneDrive/Documents/Repositories/ZombieGame/Packages/packages-lock.json
+    m_FilePath: C:/Users/Nate/Documents/GitHub/ZombieGame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639124217908417051
-    m_Hash: 711175783
+      ticks: 639133922912779016
+    m_Hash: 1973481766
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: C:/Users/helix/OneDrive/Documents/Repositories/ZombieGame/Packages
+m_ProjectPath: C:/Users/Nate/Documents/GitHub/ZombieGame/Packages
 m_EditorVersion: 6000.4.1f1 (336a400b9ea2)
 m_ResolvedPackages:
+- packageId: com.unity.ai.assistant@2.6.0-pre.1
+  testable: 0
+  isDirectDependency: 1
+  version: 2.6.0-pre.1
+  source: 1
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.ai.assistant@fc16ca46e208
+  assetPath: Packages/com.unity.ai.assistant
+  name: com.unity.ai.assistant
+  displayName: Assistant
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: 'Assistant is a generative AI tool integrated into the Unity Editor
+    to explore ideas, answer questions, and perform actions directly in the project.
+    Use natural-language prompts to interact with Assistant in a conversation-based
+    interface. Depending on the mode you choose, Assistant can either provide guidance
+    or take action in your scene and assets.
+
+
+    Ask
+
+    Focuses on explanation
+    and guidance. Assistant answers questions, suggests workflows, and inspects your
+    project using read-only tools without modifying your content.
+
+
+    Agent
+
+    Focuses
+    on action. Assistant can create, modify, or remove objects and assets by calling
+    the Unity Editor tools. All actions respect your permission settings and require
+    approval when needed.
+
+
+    Assistant is designed to be project-aware, helping
+    you work more efficiently without leaving the Unity Editor. It also provides
+    tools for adding generative AI to Unity asset workflows.'
+  errors: []
+  versions:
+    all:
+    - 1.0.0-pre.2
+    - 1.0.0-pre.3
+    - 1.0.0-pre.4
+    - 1.0.0-pre.5
+    - 1.0.0-pre.6
+    - 1.0.0-pre.7
+    - 1.0.0-pre.8
+    - 1.0.0-pre.9
+    - 1.0.0-pre.10
+    - 1.0.0-pre.11
+    - 1.0.0-pre.12
+    - 1.5.0-pre.1
+    - 1.5.0-pre.2
+    - 1.6.0-pre.1
+    - 1.6.0-pre.2
+    - 1.6.0-pre.3
+    - 1.7.0-pre.1
+    - 2.0.0-pre.1
+    - 2.1.0-pre.1
+    - 2.2.0-pre.1
+    - 2.3.0-pre.1
+    - 2.3.0-pre.2
+    - 2.4.0-pre.1
+    - 2.5.0-pre.1
+    - 2.5.0-pre.2
+    - 2.6.0-pre.1
+    - 2.7.0-pre.1
+    compatible:
+    - 1.0.0-pre.2
+    - 1.0.0-pre.3
+    - 1.0.0-pre.4
+    - 1.0.0-pre.5
+    - 1.0.0-pre.6
+    - 1.0.0-pre.7
+    - 1.0.0-pre.8
+    - 1.0.0-pre.9
+    - 1.0.0-pre.10
+    - 1.0.0-pre.11
+    - 1.0.0-pre.12
+    - 1.5.0-pre.1
+    - 1.5.0-pre.2
+    - 1.6.0-pre.1
+    - 1.6.0-pre.2
+    - 1.6.0-pre.3
+    - 1.7.0-pre.1
+    - 2.0.0-pre.1
+    - 2.1.0-pre.1
+    - 2.2.0-pre.1
+    - 2.3.0-pre.1
+    - 2.3.0-pre.2
+    - 2.4.0-pre.1
+    - 2.5.0-pre.1
+    - 2.5.0-pre.2
+    - 2.6.0-pre.1
+    - 2.7.0-pre.1
+    recommended: 2.7.0-pre.1
+    deprecated: []
+  dependencies:
+  - name: com.unity.2d.sprite
+    version: 1.0.0
+  - name: com.unity.mathematics
+    version: 1.3.2
+  - name: com.unity.cloud.gltfast
+    version: 6.14.1
+  - name: com.unity.serialization
+    version: 3.1.1
+  - name: com.unity.modules.uielements
+    version: 1.0.0
+  - name: com.unity.nuget.newtonsoft-json
+    version: 3.2.1
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.2d.sprite
+    version: 1.0.0
+  - name: com.unity.mathematics
+    version: 1.3.3
+  - name: com.unity.cloud.gltfast
+    version: 6.14.1
+  - name: com.unity.burst
+    version: 1.8.28
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.collections
+    version: 6.4.0
+  - name: com.unity.nuget.mono-cecil
+    version: 1.11.6
+  - name: com.unity.test-framework
+    version: 1.6.0
+  - name: com.unity.ext.nunit
+    version: 2.0.5
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.test-framework.performance
+    version: 3.3.0
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  - name: com.unity.serialization
+    version: 3.1.5
+  - name: com.unity.modules.uielements
+    version: 1.0.0
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.hierarchycore
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  - name: com.unity.nuget.newtonsoft-json
+    version: 3.2.2
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 639118619713730000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ai.assistant@2.6/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/muse-editor.git
+    revision: 8ed170ceb2054a0d67276099617cd030eb182af2
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 2.7.0-pre.1
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Changed\n\n- Moved Profiler Assistant to Skills
+    implementation.\n- Update Plan mode tool descriptions.\n\n### Fixed\n\n- Added
+    tooltip to conversation context counter.\n- Fixed a few icons that were not dark
+    enough in light mode.\n- GetConsoleLogs tool timestamps.\n- MCP Server settings
+    subtitle text overflow.\n- NullReferenceException in Chat Window.\n- Preferences
+    search bar now finds matches on the Assistant tab.\n- Some image types cannot
+    be used as assistant attachments.\n- Tool renderer header icons getting squashed
+    when tool call title is too long."}'
+  signature:
+    status: 1
+    reason: Signature is ok
+    attestation:
+      format: archive
+      publishingChannel: unity
+      entitlementKeys: []
+      ownerOrgName: 
+      ownerOrgId: 
+      publisherName: 
+    errorCode: 
+  assetStore:
+    productId: 
+  fingerprint: fc16ca46e2086e9df0eb56acc06ff8a649777879
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0-pre.2
+    minimumUnityVersion: 6000.0.60f1
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
 - packageId: com.unity.ai.navigation@2.0.11
   testable: 0
   isDirectDependency: 1
   version: 2.0.11
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.ai.navigation@78534c21b27d
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.ai.navigation@78534c21b27d
   assetPath: Packages/com.unity.ai.navigation
   name: com.unity.ai.navigation
   displayName: AI Navigation
@@ -164,7 +384,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.11.4
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.collab-proxy@a5329f833fa8
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.collab-proxy@a5329f833fa8
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Unity Version Control
@@ -357,7 +577,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.2
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.feature.development@767aadbc6eb7
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.feature.development@767aadbc6eb7
   assetPath: Packages/com.unity.feature.development
   name: com.unity.feature.development
   displayName: Engineering
@@ -479,7 +699,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.39
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.ide.rider@4504839d03f7
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.ide.rider@4504839d03f7
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -624,7 +844,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.27
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.ide.visualstudio@dc1ddd4f09b6
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.ide.visualstudio@dc1ddd4f09b6
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -754,7 +974,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.2.5
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.ide.vscode@82e68656b7bd
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.ide.vscode@82e68656b7bd
   assetPath: Packages/com.unity.ide.vscode
   name: com.unity.ide.vscode
   displayName: Visual Studio Code Editor
@@ -841,7 +1061,7 @@ m_ResolvedPackages:
   upmReserved: 
   signature:
     status: 1
-    reason: Signature is ok
+    reason: 
     attestation:
       format: 
       publishingChannel: 
@@ -868,7 +1088,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.1
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a
   assetPath: Packages/com.unity.multiplayer.center
   name: com.unity.multiplayer.center
   displayName: Multiplayer Center
@@ -975,7 +1195,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.11.0
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.netcode.gameobjects@60c1d83693e8
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.netcode.gameobjects@60c1d83693e8
   assetPath: Packages/com.unity.netcode.gameobjects
   name: com.unity.netcode.gameobjects
   displayName: Netcode for GameObjects
@@ -1056,9 +1276,13 @@ m_ResolvedPackages:
     - 2.9.2
     - 2.10.0
     - 2.11.0
+    - 2.11.1
+    - 2.11.2
     compatible:
     - 2.11.0
-    recommended: 2.11.0
+    - 2.11.1
+    - 2.11.2
+    recommended: 2.11.2
     deprecated: []
   dependencies:
   - name: com.unity.transport
@@ -1164,7 +1388,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.6.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.test-framework@76560ee600cb
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.test-framework@76560ee600cb
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -1265,7 +1489,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.8.11
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.timeline@bfd27f8016ff
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.timeline@bfd27f8016ff
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1467,7 +1691,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.ugui@d8a2716f3013
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.ugui@d8a2716f3013
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: uGUI
@@ -1574,7 +1798,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.9.11
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.visualscripting@8bed5ad90189
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.visualscripting@8bed5ad90189
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -1714,7 +1938,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.accessibility
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.accessibility
   assetPath: Packages/com.unity.modules.accessibility
   name: com.unity.modules.accessibility
   displayName: Accessibility
@@ -1802,7 +2026,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.adaptiveperformance
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.adaptiveperformance
   assetPath: Packages/com.unity.modules.adaptiveperformance
   name: com.unity.modules.adaptiveperformance
   displayName: Adaptive Performance
@@ -1896,7 +2120,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.ai
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.ai
   assetPath: Packages/com.unity.modules.ai
   name: com.unity.modules.ai
   displayName: AI
@@ -1984,7 +2208,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.androidjni
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.androidjni
   assetPath: Packages/com.unity.modules.androidjni
   name: com.unity.modules.androidjni
   displayName: Android JNI
@@ -2071,7 +2295,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.animation
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.animation
   assetPath: Packages/com.unity.modules.animation
   name: com.unity.modules.animation
   displayName: Animation
@@ -2159,7 +2383,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.assetbundle
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.assetbundle
   assetPath: Packages/com.unity.modules.assetbundle
   name: com.unity.modules.assetbundle
   displayName: Asset Bundle
@@ -2247,7 +2471,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.audio
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.audio
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -2335,7 +2559,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.cloth
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.cloth
   assetPath: Packages/com.unity.modules.cloth
   name: com.unity.modules.cloth
   displayName: Cloth
@@ -2427,7 +2651,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.director
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.director
   assetPath: Packages/com.unity.modules.director
   name: com.unity.modules.director
   displayName: Director
@@ -2523,7 +2747,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.imageconversion
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.imageconversion
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -2611,7 +2835,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.imgui
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.imgui
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -2699,7 +2923,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.jsonserialize
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.jsonserialize
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -2787,7 +3011,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.particlesystem
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.particlesystem
   assetPath: Packages/com.unity.modules.particlesystem
   name: com.unity.modules.particlesystem
   displayName: Particle System
@@ -2875,7 +3099,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.physics
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.physics
   assetPath: Packages/com.unity.modules.physics
   name: com.unity.modules.physics
   displayName: Physics
@@ -2963,7 +3187,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.physics2d
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.physics2d
   assetPath: Packages/com.unity.modules.physics2d
   name: com.unity.modules.physics2d
   displayName: Physics 2D
@@ -3051,7 +3275,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.screencapture
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.screencapture
   assetPath: Packages/com.unity.modules.screencapture
   name: com.unity.modules.screencapture
   displayName: Screen Capture
@@ -3143,7 +3367,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.terrain
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.terrain
   assetPath: Packages/com.unity.modules.terrain
   name: com.unity.modules.terrain
   displayName: Terrain
@@ -3231,7 +3455,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.terrainphysics
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.terrainphysics
   assetPath: Packages/com.unity.modules.terrainphysics
   name: com.unity.modules.terrainphysics
   displayName: Terrain Physics
@@ -3327,7 +3551,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.tilemap
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.tilemap
   assetPath: Packages/com.unity.modules.tilemap
   name: com.unity.modules.tilemap
   displayName: Tilemap
@@ -3418,7 +3642,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.ui
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.ui
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -3506,7 +3730,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.uielements
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.uielements
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -3614,7 +3838,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.umbra
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.umbra
   assetPath: Packages/com.unity.modules.umbra
   name: com.unity.modules.umbra
   displayName: Umbra
@@ -3702,7 +3926,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.unityanalytics
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.unityanalytics
   assetPath: Packages/com.unity.modules.unityanalytics
   name: com.unity.modules.unityanalytics
   displayName: Unity Analytics
@@ -3797,7 +4021,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequest
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequest
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -3885,7 +4109,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle
   assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
   name: com.unity.modules.unitywebrequestassetbundle
   displayName: Unity Web Request Asset Bundle
@@ -3981,7 +4205,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequestaudio
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequestaudio
   assetPath: Packages/com.unity.modules.unitywebrequestaudio
   name: com.unity.modules.unitywebrequestaudio
   displayName: Unity Web Request Audio
@@ -4077,7 +4301,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequesttexture
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequesttexture
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -4173,7 +4397,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequestwww
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.unitywebrequestwww
   assetPath: Packages/com.unity.modules.unitywebrequestwww
   name: com.unity.modules.unitywebrequestwww
   displayName: Unity Web Request WWW
@@ -4285,7 +4509,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.vectorgraphics
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.vectorgraphics
   assetPath: Packages/com.unity.modules.vectorgraphics
   name: com.unity.modules.vectorgraphics
   displayName: Vector Graphics
@@ -4392,7 +4616,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.vehicles
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.vehicles
   assetPath: Packages/com.unity.modules.vehicles
   name: com.unity.modules.vehicles
   displayName: Vehicles
@@ -4484,7 +4708,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.video
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.video
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -4584,7 +4808,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.vr
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.vr
   assetPath: Packages/com.unity.modules.vr
   name: com.unity.modules.vr
   displayName: VR
@@ -4687,7 +4911,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.wind
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.wind
   assetPath: Packages/com.unity.modules.wind
   name: com.unity.modules.wind
   displayName: Wind
@@ -4775,7 +4999,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.xr
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.xr
   assetPath: Packages/com.unity.modules.xr
   name: com.unity.modules.xr
   displayName: XR
@@ -4875,7 +5099,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.subsystems
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.subsystems
   assetPath: Packages/com.unity.modules.subsystems
   name: com.unity.modules.subsystems
   displayName: Subsystems
@@ -4967,7 +5191,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.modules.hierarchycore
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.modules.hierarchycore
   assetPath: Packages/com.unity.modules.hierarchycore
   name: com.unity.modules.hierarchycore
   displayName: Hierarchy Core
@@ -5055,7 +5279,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.5
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.ext.nunit@d8c07649098d
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.ext.nunit@d8c07649098d
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -5146,7 +5370,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.7.2
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.transport@ed7eca02732f
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.transport@ed7eca02732f
   assetPath: Packages/com.unity.transport
   name: com.unity.transport
   displayName: Unity Transport
@@ -5324,7 +5548,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.11.6
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff
   assetPath: Packages/com.unity.nuget.mono-cecil
   name: com.unity.nuget.mono-cecil
   displayName: Mono Cecil
@@ -5429,7 +5653,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.1
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.editorcoroutines@54394ed3283c
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.editorcoroutines@54394ed3283c
   assetPath: Packages/com.unity.editorcoroutines
   name: com.unity.editorcoroutines
   displayName: Editor Coroutines
@@ -5530,7 +5754,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.3.3
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.performance.profile-analyzer@10347e9ce886
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.performance.profile-analyzer@10347e9ce886
   assetPath: Packages/com.unity.performance.profile-analyzer
   name: com.unity.performance.profile-analyzer
   displayName: Profile Analyzer
@@ -5642,7 +5866,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.3.0
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.testtools.codecoverage@19a841221620
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.testtools.codecoverage@19a841221620
   assetPath: Packages/com.unity.testtools.codecoverage
   name: com.unity.testtools.codecoverage
   displayName: Code Coverage
@@ -5801,12 +6025,652 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
+- packageId: com.unity.2d.sprite@1.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 2
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.2d.sprite@929df5adbb1f
+  assetPath: Packages/com.unity.2d.sprite
+  name: com.unity.2d.sprite
+  displayName: 2D Sprite
+  author:
+    name: 
+    email: 
+    url: 
+  category: 2D
+  type: 
+  description: Use Unity Sprite Editor Window to create and edit Sprite asset properties
+    like pivot, borders and Physics shape
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - 2d
+  - sprite
+  - sprite editor window
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  signature:
+    status: 0
+    reason: 
+    attestation:
+      format: 
+      publishingChannel: 
+      entitlementKeys: []
+      ownerOrgName: 
+      ownerOrgId: 
+      publisherName: 
+    errorCode: 
+  assetStore:
+    productId: 
+  fingerprint: 929df5adbb1fa0f2e55b55a7cfb69bde65a57b7d
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 2019.2
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.mathematics@1.3.3
+  testable: 0
+  isDirectDependency: 0
+  version: 1.3.3
+  source: 1
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.mathematics@19a9377c4ffa
+  assetPath: Packages/com.unity.mathematics
+  name: com.unity.mathematics
+  displayName: Mathematics
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: Unity's C# SIMD math library providing vector types and math functions
+    with a shader like syntax.
+  errors: []
+  versions:
+    all:
+    - 0.0.12-preview.2
+    - 0.0.12-preview.5
+    - 0.0.12-preview.8
+    - 0.0.12-preview.10
+    - 0.0.12-preview.11
+    - 0.0.12-preview.13
+    - 0.0.12-preview.17
+    - 0.0.12-preview.19
+    - 0.0.12-preview.20
+    - 1.0.0-preview.1
+    - 1.0.1
+    - 1.1.0-preview.1
+    - 1.1.0
+    - 1.2.1
+    - 1.2.4
+    - 1.2.5
+    - 1.2.6
+    - 1.3.1
+    - 1.3.2
+    - 1.3.3
+    compatible:
+    - 1.3.3
+    recommended: 1.3.3
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - unity
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638950052122000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.mathematics@1.3/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
+    revision: 1695a8503482a3131be78cc26308a93f82c05b04
+    path: 
+  unityLifecycle:
+    version: 1.3.3
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Fixed\n* Fixed `math.hash` crash when using IL2CPP
+    builds on Arm 32 bit devices.\n* Fixed obsolete method usage warnings for `MatrixDrawer.CanCacheInspectorGUI`
+    and `PrimitiveVectorDrawer.CanCacheInspectorGUI` in UNITY_2023_2_OR_NEWER.\n*
+    Updated minimum editor version to 2021.3"}'
+  signature:
+    status: 1
+    reason: Signature is ok
+    attestation:
+      format: archive
+      publishingChannel: unity
+      entitlementKeys: []
+      ownerOrgName: 
+      ownerOrgId: 
+      publisherName: 
+    errorCode: 
+  assetStore:
+    productId: 
+  fingerprint: 19a9377c4ffa59370edad3e6a34e4445529badde
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.3.3
+    minimumUnityVersion: 2021.3
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.cloud.gltfast@6.14.1
+  testable: 0
+  isDirectDependency: 0
+  version: 6.14.1
+  source: 1
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.cloud.gltfast@0847aee0f6da
+  assetPath: Packages/com.unity.cloud.gltfast
+  name: com.unity.cloud.gltfast
+  displayName: Unity glTFast
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: Use glTFast to import and export glTF 3D files efficiently at runtime
+    or in the Editor
+  errors: []
+  versions:
+    all:
+    - 5.0.4
+    - 5.2.0-pre.2
+    - 5.2.0
+    - 6.0.0-pre.2
+    - 6.0.0
+    - 6.0.1
+    - 6.1.0
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 6.7.1
+    - 6.8.0
+    - 6.9.0
+    - 6.9.1
+    - 6.10.0
+    - 6.10.1
+    - 6.10.2
+    - 6.10.3
+    - 6.11.0
+    - 6.12.0
+    - 6.12.1
+    - 6.13.0
+    - 6.13.1
+    - 6.14.0
+    - 6.14.1
+    - 6.15.0
+    - 6.15.1
+    - 6.16.0
+    - 6.16.1
+    - 6.17.0
+    - 6.18.0
+    compatible:
+    - 6.14.1
+    - 6.15.0
+    - 6.15.1
+    - 6.16.0
+    - 6.16.1
+    - 6.17.0
+    - 6.18.0
+    recommended: 6.14.1
+    deprecated: []
+  dependencies:
+  - name: com.unity.burst
+    version: 1.8.24
+  - name: com.unity.collections
+    version: 1.2.4
+  - name: com.unity.mathematics
+    version: 1.2.6
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.burst
+    version: 1.8.28
+  - name: com.unity.mathematics
+    version: 1.3.3
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.collections
+    version: 6.4.0
+  - name: com.unity.nuget.mono-cecil
+    version: 1.11.6
+  - name: com.unity.test-framework
+    version: 1.6.0
+  - name: com.unity.ext.nunit
+    version: 2.0.5
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.test-framework.performance
+    version: 3.3.0
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  keywords:
+  - mesh
+  - gltf
+  - asset
+  - format
+  - draco
+  - ktx
+  - basis
+  - universal
+  - basisu
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638950104361280000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.cloud.gltfast@6.14/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.gltfast.src.git
+    revision: 20fc683570b1c3d52511255324b8c02f12e1524e
+    path: 
+  unityLifecycle:
+    version: 6.14.1
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 0
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Added\n\n### Changed\n- [TryGetAllUVAccessors](xref:GLTFast.Schema.Attributes.TryGetAllUVAccessors*)
+    only returns the first 8, actually supported UV sets (and not the ninth anymore).\n\n###
+    Fixed\n- Avoid crash when loading meshes with more than 8 texture coordinate
+    sets by properly limiting them.\n\n### Removed\n\n### Deprecated\n\n### Security"}'
+  signature:
+    status: 1
+    reason: Signature is ok
+    attestation:
+      format: archive
+      publishingChannel: unity
+      entitlementKeys: []
+      ownerOrgName: 
+      ownerOrgId: 
+      publisherName: 
+    errorCode: 
+  assetStore:
+    productId: 
+  fingerprint: 0847aee0f6da9f7f63ea95a8a3ea4906dba73079
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 6.14.1
+    minimumUnityVersion: 2021.3.46f1
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.serialization@3.1.5
+  testable: 0
+  isDirectDependency: 0
+  version: 3.1.5
+  source: 1
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.serialization@c463b52e88d7
+  assetPath: Packages/com.unity.serialization
+  name: com.unity.serialization
+  displayName: Serialization
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: Use Unity's Serialization to serialize and deserialize from/to JSON
+    and Binary formats.
+  errors: []
+  versions:
+    all:
+    - 0.2.1-preview
+    - 0.3.0-preview
+    - 0.3.1-preview
+    - 0.4.0-preview
+    - 0.4.1-preview
+    - 0.5.0-preview
+    - 0.5.1-preview
+    - 0.6.0-preview
+    - 0.6.1-preview
+    - 0.6.2-preview
+    - 0.6.3-preview
+    - 0.6.4-preview
+    - 1.0.0-preview.5
+    - 1.1.0-preview
+    - 1.1.1-preview
+    - 1.2.0-preview
+    - 1.3.0-preview
+    - 1.3.1-preview
+    - 1.4.3-preview
+    - 1.5.0-preview
+    - 1.6.0-preview
+    - 1.6.1-preview
+    - 1.6.2-preview
+    - 1.7.0-preview.1
+    - 1.7.1-preview
+    - 1.7.3-preview
+    - 1.7.4-preview
+    - 1.7.5-preview
+    - 1.8.2-preview
+    - 1.8.3-preview
+    - 2.0.0-exp.11
+    - 2.0.0-exp.13
+    - 2.1.0-exp.1
+    - 2.1.1-exp.1
+    - 2.1.2-exp.1
+    - 3.0.0-pre.1
+    - 3.0.0-pre.2
+    - 3.0.0-pre.3
+    - 3.1.1
+    - 3.1.2
+    - 3.1.3
+    - 3.1.5
+    compatible:
+    - 3.1.5
+    recommended: 3.1.5
+    deprecated: []
+  dependencies:
+  - name: com.unity.burst
+    version: 1.8.13
+  - name: com.unity.collections
+    version: 2.4.2
+  resolvedDependencies:
+  - name: com.unity.burst
+    version: 1.8.28
+  - name: com.unity.mathematics
+    version: 1.3.3
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.collections
+    version: 6.4.0
+  - name: com.unity.nuget.mono-cecil
+    version: 1.11.6
+  - name: com.unity.test-framework
+    version: 1.6.0
+  - name: com.unity.ext.nunit
+    version: 2.0.5
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.test-framework.performance
+    version: 3.3.0
+  keywords:
+  - serialization
+  - json
+  - binary
+  - unity
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638966458405520000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.serialization@3.1/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.properties.git
+    revision: 0febd9ead7f2a78e9aec47ac766b631972bda704
+    path: 
+  unityLifecycle:
+    version: 3.1.5
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 0
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Changed\n* Updated Unity APIs that are being deprecated.\n*
+    Updated minimum Unity version to `2022.3`"}'
+  signature:
+    status: 1
+    reason: Signature is ok
+    attestation:
+      format: archive
+      publishingChannel: unity
+      entitlementKeys: []
+      ownerOrgName: 
+      ownerOrgId: 
+      publisherName: 
+    errorCode: 
+  assetStore:
+    productId: 
+  fingerprint: c463b52e88d71aa1adbb674e4926cf8f1e3b054c
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 3.1.5
+    minimumUnityVersion: 2022.3.11f1
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.nuget.newtonsoft-json@3.2.2
+  testable: 0
+  isDirectDependency: 0
+  version: 3.2.2
+  source: 1
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64
+  assetPath: Packages/com.unity.nuget.newtonsoft-json
+  name: com.unity.nuget.newtonsoft-json
+  displayName: Newtonsoft Json
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: library
+  description: 'Newtonsoft Json for use in Unity projects and Unity packages. Currently
+    synced to version 13.0.2.
+
+
+    This package is used for advanced json serialization
+    and deserialization. Most Unity users will be better suited using the existing
+    json tools built into Unity.
+
+    To avoid assembly clashes, please use this
+    package if you intend to use Newtonsoft Json.'
+  errors: []
+  versions:
+    all:
+    - 1.0.0-preview.2
+    - 1.0.0-preview.3
+    - 1.0.0-preview.4
+    - 1.0.1-preview.1
+    - 1.1.2
+    - 2.0.0-preview
+    - 2.0.0-preview.1
+    - 2.0.0-preview.2
+    - 2.0.0
+    - 2.0.1-preview.1
+    - 2.0.2
+    - 3.0.1
+    - 3.0.2
+    - 3.1.0
+    - 3.2.0
+    - 3.2.1
+    - 3.2.2
+    compatible:
+    - 3.2.2
+    recommended: 3.2.2
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638971744897690000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.newtonsoft-json.git
+    revision: d8e49aef8979bef617144382052ec2f479645eaf
+    path: 
+  unityLifecycle:
+    version: 3.2.2
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 0
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"* Fixed Newtonsoft DLL when compiling with netstandard
+    2.0."}'
+  signature:
+    status: 1
+    reason: Signature is ok
+    attestation:
+      format: archive
+      publishingChannel: unity
+      entitlementKeys: []
+      ownerOrgName: 
+      ownerOrgId: 
+      publisherName: 
+    errorCode: 
+  assetStore:
+    productId: 
+  fingerprint: 4dfd81071c6475bb9c114f920bfb4e3fc5e28c6a
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 3.2.2
+    minimumUnityVersion: 2018.4
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
 - packageId: com.unity.burst@1.8.28
   testable: 0
   isDirectDependency: 0
   version: 1.8.28
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.burst@07790c2d06d9
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.burst@07790c2d06d9
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -6054,7 +6918,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 6.4.0
   source: 2
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.collections@538ace9075bc
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.collections@538ace9075bc
   assetPath: Packages/com.unity.collections
   name: com.unity.collections
   displayName: Collections
@@ -6166,123 +7030,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.mathematics@1.3.3
-  testable: 0
-  isDirectDependency: 0
-  version: 1.3.3
-  source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.mathematics@19a9377c4ffa
-  assetPath: Packages/com.unity.mathematics
-  name: com.unity.mathematics
-  displayName: Mathematics
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: 
-  description: Unity's C# SIMD math library providing vector types and math functions
-    with a shader like syntax.
-  errors: []
-  versions:
-    all:
-    - 0.0.12-preview.2
-    - 0.0.12-preview.5
-    - 0.0.12-preview.8
-    - 0.0.12-preview.10
-    - 0.0.12-preview.11
-    - 0.0.12-preview.13
-    - 0.0.12-preview.17
-    - 0.0.12-preview.19
-    - 0.0.12-preview.20
-    - 1.0.0-preview.1
-    - 1.0.1
-    - 1.1.0-preview.1
-    - 1.1.0
-    - 1.2.1
-    - 1.2.4
-    - 1.2.5
-    - 1.2.6
-    - 1.3.1
-    - 1.3.2
-    - 1.3.3
-    compatible:
-    - 1.3.3
-    recommended: 1.3.3
-    deprecated: []
-  dependencies: []
-  resolvedDependencies: []
-  keywords:
-  - unity
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-    compliance:
-      status: 0
-      violations: []
-  hideInEditor: 1
-  entitlements:
-    licensingModel: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 638950052122000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.mathematics@1.3/manual/index.html
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
-    revision: 1695a8503482a3131be78cc26308a93f82c05b04
-    path: 
-  unityLifecycle:
-    version: 1.3.3
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-    isDiscoverable: 1
-  isDeprecated: 0
-  deprecationMessage: 
-  git:
-    hash: 
-    revision: 
-  upmReserved: '{"changelog":"### Fixed\n* Fixed `math.hash` crash when using IL2CPP
-    builds on Arm 32 bit devices.\n* Fixed obsolete method usage warnings for `MatrixDrawer.CanCacheInspectorGUI`
-    and `PrimitiveVectorDrawer.CanCacheInspectorGUI` in UNITY_2023_2_OR_NEWER.\n*
-    Updated minimum editor version to 2021.3"}'
-  signature:
-    status: 1
-    reason: Signature is ok
-    attestation:
-      format: archive
-      publishingChannel: unity
-      entitlementKeys: []
-      ownerOrgName: 
-      ownerOrgId: 
-      publisherName: 
-    errorCode: 
-  assetStore:
-    productId: 
-  fingerprint: 19a9377c4ffa59370edad3e6a34e4445529badde
-  editorCompatibility:
-    compatibilityLevel: 0
-    minimumPackageVersion: 1.3.3
-    minimumUnityVersion: 2021.3
-  compliance:
-    status: 0
-    violation:
-      scopePatternExpression: 
-      message: 
-      readMoreLink: 
 - packageId: com.unity.settings-manager@2.1.1
   testable: 0
   isDirectDependency: 0
   version: 2.1.1
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86
   assetPath: Packages/com.unity.settings-manager
   name: com.unity.settings-manager
   displayName: Settings Manager
@@ -6381,7 +7134,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 3.3.0
   source: 1
-  resolvedPath: C:\Users\helix\OneDrive\Documents\Repositories\ZombieGame\Library\PackageCache\com.unity.test-framework.performance@a902ab7fb342
+  resolvedPath: C:\Users\Nate\Documents\GitHub\ZombieGame\Library\PackageCache\com.unity.test-framework.performance@a902ab7fb342
   assetPath: Packages/com.unity.test-framework.performance
   name: com.unity.test-framework.performance
   displayName: Performance testing API
@@ -6453,10 +7206,12 @@ m_ResolvedPackages:
     - 3.3.0
     - 3.4.0
     - 3.4.1
+    - 3.4.2
     compatible:
     - 3.3.0
     - 3.4.0
     - 3.4.1
+    - 3.4.2
     recommended: 3.3.0
     deprecated: []
   dependencies:
