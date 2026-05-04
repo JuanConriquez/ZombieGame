@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eea17191e208a4449afd95027519ad1, type: 3}
+  m_Name: Weapon_Shotgun
+  m_EditorClassIdentifier: 
+  displayName: Shotgun
+  kind: 1
+  damagePerPellet: 12
+  pelletsPerShot: 8
+  range: 22
+  fireRate: 1.2
+  automatic: 0
+  magazineSize: 6
+  reserveAmmoStart: 36
+  reloadSeconds: 2.2
+  baseSpreadDeg: 4.5
+  spreadPerShotDeg: 0.6
+  maxSpreadDeg: 8
+  spreadRecoverPerSec: 6
+  cameraKick: 0.55
+  cameraKickRecover: 12
+  muzzleLightIntensity: 8
+  muzzleLightRange: 16
+  muzzleLightSeconds: 0.075
+  muzzleLightColor: {r: 1, g: 0.78, b: 0.38, a: 1}
+  tracerColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  tracerSeconds: 0.05
+  tracerWidth: 0.06
