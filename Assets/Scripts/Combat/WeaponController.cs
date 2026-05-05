@@ -232,6 +232,14 @@ namespace ZombieGame.Combat
                     endPoint = hit.point;
 
                     var dmg = hit.collider.GetComponentInParent<IDamageable>();
+
+                    // ── DEBUG ──────────────────────────────────────────────
+                    Debug.Log($"[Gun] Ray hit: '{hit.collider.gameObject.name}' " +
+                              $"(layer: {LayerMask.LayerToName(hit.collider.gameObject.layer)}) " +
+                              $"| IDamageable found: {dmg != null}" +
+                              (dmg != null ? $" | type: {dmg.GetType().Name}" : " ← no IDamageable on this object or its parents"));
+                    // ──────────────────────────────────────────────────────
+
                     if (dmg != null)
                     {
                         if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening)
@@ -245,6 +253,13 @@ namespace ZombieGame.Combat
                             dmg.ApplyDamage(data.damagePerPellet, gameObject, hit.point, hit.normal);
                         }
                     }
+                }
+                else
+                {
+                    // ── DEBUG ──────────────────────────────────────────────
+                    Debug.Log($"[Gun] Ray from {origin} dir {dir} — hit NOTHING within {data.range}m " +
+                              $"(hittableMask: {hittableMask.value})");
+                    // ──────────────────────────────────────────────────────
                 }
 
                 BulletTracer.Instance.Spawn(origin, endPoint, data.tracerColor, data.tracerSeconds, data.tracerWidth);
