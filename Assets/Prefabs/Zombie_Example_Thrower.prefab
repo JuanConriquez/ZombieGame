@@ -883,7 +883,7 @@ MonoBehaviour:
   attackDamage: 10
   attackRange: 2
   attackCooldown: 1.5
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 2723695976118950991, guid: 12e0d77668dabd64f93ed7c7569e607e, type: 3}
   preferredThrowDistance: 10
 --- !u!136 &-5433106830726358781
 CapsuleCollider:
