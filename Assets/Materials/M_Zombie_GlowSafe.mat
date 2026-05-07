@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Zombie_Radioactive
-  m_Shader: {fileID: 4800000, guid: f66a4ac6491896646aaf6621f831f8a5, type: 3}
+  m_Name: M_Zombie_GlowSafe
+  m_Shader: {fileID: 4800000, guid: 639cca5aef22df145838a1870d10673e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -64,28 +64,21 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DissolveAmount: 0
-    - _DissolveEdgeWidth: 0.06
-    - _DissolveScale: 45
     - _DstBlend: 0
-    - _EmissionStrength: 1.2
+    - _EmissionStrength: 0.05
     - _FlashAmount: 0
-    - _GlitchSpeed: 12
-    - _GlitchStrength: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineAlpha: 0.8
-    - _OutlineThickness: 2
     - _Parallax: 0.02
     - _PulseSpeed: 3
-    - _PulseStrength: 1.4
+    - _PulseStrength: 0.3
     - _RimPower: 2
-    - _RimStrength: 2.5
-    - _Smoothness: 0.25
+    - _RimStrength: 1
+    - _Smoothness: 0.2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -93,12 +86,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DissolveEdgeColor: {r: 0.19999996, g: 1, b: 0.19999996, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlashColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FxColor: {r: 0.4862745, g: 0.9882354, b: 0, a: 1}
-    - _FxTint: {r: 0, g: 1, b: 0, a: 1}
-    - _OutlineColor: {r: 0, g: 1, b: 0, a: 1}
+    - _FxColor: {r: 0.19999996, g: 1, b: 0.19999996, a: 1}
     - _RimColor: {r: 0.19999996, g: 1, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
