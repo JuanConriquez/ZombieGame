@@ -881,7 +881,7 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 3.5
   attackDamage: 10
-  attackRange: 2
+  attackRange: 4
   attackCooldown: 1.5
   projectilePrefab: {fileID: 0}
   preferredThrowDistance: 10
