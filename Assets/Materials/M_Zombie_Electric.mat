@@ -61,6 +61,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BodyTintAmount: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -68,7 +69,7 @@ Material:
     - _DissolveEdgeWidth: 0.0436
     - _DissolveScale: 150
     - _DstBlend: 0
-    - _EmissionStrength: 0
+    - _EmissionStrength: 0.748
     - _FlashAmount: 0
     - _GlitchSpeed: 20
     - _GlitchStrength: 0.02
@@ -81,10 +82,11 @@ Material:
     - _OutlineAlpha: 0.8
     - _OutlineThickness: 2
     - _Parallax: 0.02
-    - _PulseSpeed: 2.26
-    - _PulseStrength: 0.449
+    - _PulseSpeed: 17.93
+    - _PulseStrength: 1.637
     - _RimPower: 0.5
     - _RimStrength: 0
+    - _SelfLightStrength: 0.339
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -92,11 +94,11 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.066037714, g: 0.05513526, b: 0.05513526, a: 1}
-    - _DissolveEdgeColor: {r: 0.26415092, g: 0.25542894, b: 0.25542894, a: 1}
+    - _Color: {r: 0.14150941, g: 0.05807226, b: 0.05807226, a: 1}
+    - _DissolveEdgeColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlashColor: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
-    - _FxColor: {r: 0.18039216, g: 0.17254902, b: 0.16470589, a: 1}
+    - _FlashColor: {r: 0.11320752, g: 0.10840154, b: 0.10840154, a: 1}
+    - _FxColor: {r: 0, g: 0, b: 0, a: 1}
     - _FxTint: {r: 0, g: 0.5450981, b: 0.5450981, a: 1}
     - _OutlineColor: {r: 0, g: 0.5450981, b: 0.5450981, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
