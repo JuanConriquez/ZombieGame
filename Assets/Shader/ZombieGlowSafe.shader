@@ -1,4 +1,4 @@
-Shader "Custom/3D/Zombie Special FX"
+Shader "Custom/3D/Zombie Glow Safe"
 {
     Properties
     {
@@ -6,23 +6,19 @@ Shader "Custom/3D/Zombie Special FX"
         _Color ("Base Color", Color) = (1,1,1,1)
 
         _FxColor ("FX Color", Color) = (0.2, 1, 0.2, 1)
-        _BodyTintAmount ("Body Tint Amount", Range(0, 1)) = 0.06
+        _BodyTintAmount ("Body Tint Amount", Range(0, 1)) = 0.04
+        _SelfLightStrength ("Self Light Strength", Range(0, 1)) = 0.15
 
-        _EmissionStrength ("Emission Strength", Range(0, 3)) = 0.05
+        _EmissionStrength ("Emission Strength", Range(0, 3)) = 0.03
         _PulseStrength ("Pulse Strength", Range(0, 3)) = 0.3
         _PulseSpeed ("Pulse Speed", Range(0, 20)) = 2.5
 
         _RimColor ("Rim Color", Color) = (0.2, 1, 0.2, 1)
         _RimPower ("Rim Power", Range(0.5, 8)) = 2.5
-        _RimStrength ("Rim Strength", Range(0, 4)) = 0.8
+        _RimStrength ("Rim Strength", Range(0, 4)) = 0.6
 
         _FlashColor ("Hit Flash Color", Color) = (1,1,1,1)
         _FlashAmount ("Hit Flash Amount", Range(0, 1)) = 0
-
-        _DissolveAmount ("Dissolve Amount", Range(0, 1)) = 0
-        _DissolveScale ("Dissolve Scale", Range(5, 150)) = 45
-        _DissolveEdgeWidth ("Dissolve Edge Width", Range(0.01, 0.3)) = 0.08
-        _DissolveEdgeColor ("Dissolve Edge Color", Color) = (0.2, 1, 0.2, 1)
 
         _Metallic ("Metallic", Range(0,1)) = 0
         _Smoothness ("Smoothness", Range(0,1)) = 0.2
@@ -36,7 +32,7 @@ Shader "Custom/3D/Zombie Special FX"
             "Queue"="Geometry"
         }
 
-        LOD 300
+        LOD 250
 
         CGPROGRAM
         #pragma surface surf Standard fullforwardshadows addshadow
@@ -47,6 +43,7 @@ Shader "Custom/3D/Zombie Special FX"
         fixed4 _Color;
         fixed4 _FxColor;
         float _BodyTintAmount;
+        float _SelfLightStrength;
 
         float _EmissionStrength;
         float _PulseStrength;
@@ -59,11 +56,6 @@ Shader "Custom/3D/Zombie Special FX"
         fixed4 _FlashColor;
         float _FlashAmount;
 
-        float _DissolveAmount;
-        float _DissolveScale;
-        float _DissolveEdgeWidth;
-        fixed4 _DissolveEdgeColor;
-
         float _Metallic;
         float _Smoothness;
 
@@ -72,52 +64,27 @@ Shader "Custom/3D/Zombie Special FX"
             float2 uv_MainTex;
             float3 viewDir;
             float3 worldNormal;
-            float3 worldPos;
         };
-
-        float hash(float3 p)
-        {
-            p = frac(p * 0.3183099 + 0.1);
-            p *= 17.0;
-            return frac(p.x * p.y * p.z * (p.x + p.y + p.z));
-        }
 
         void surf(Input IN, inout SurfaceOutputStandard o)
         {
             fixed4 tex = tex2D(_MainTex, IN.uv_MainTex);
 
-            // Keep the original zombie texture visible.
+            // Original zombie texture.
             fixed3 baseColor = tex.rgb * _Color.rgb;
 
-            // Small special-zombie tint. This prevents the whole zombie from becoming solid neon.
+            // Small zombie-type tint.
+            // Example: green for radioactive, blue for electric, orange for fire.
             baseColor = lerp(baseColor, _FxColor.rgb, _BodyTintAmount);
 
             // Hit flash.
             baseColor = lerp(baseColor, _FlashColor.rgb, _FlashAmount);
 
-            // Dissolve setup.
-            float dissolveNoise = hash(floor(IN.worldPos * _DissolveScale));
-            float dissolveEdge = 0.0;
-
-            // Important:
-            // Dissolve only activates when Dissolve Amount is above 0.
-            // This prevents green square patches from showing during normal gameplay.
-            if (_DissolveAmount > 0.001)
-            {
-                clip(dissolveNoise - _DissolveAmount);
-
-                dissolveEdge = 1.0 - smoothstep(
-                    _DissolveAmount,
-                    _DissolveAmount + _DissolveEdgeWidth,
-                    dissolveNoise
-                );
-            }
-
-            // Pulse glow.
+            // Pulse value.
             float pulse = sin(_Time.y * _PulseSpeed) * 0.5 + 0.5;
             float pulsePower = 1.0 + pulse * _PulseStrength;
 
-            // Rim glow around the zombie edges.
+            // Rim glow around silhouette edges.
             float3 normalDirection = normalize(IN.worldNormal);
             float3 viewDirection = normalize(IN.viewDir);
 
@@ -126,14 +93,14 @@ Shader "Custom/3D/Zombie Special FX"
 
             fixed3 emission = 0;
 
-            // Very subtle body glow.
-            emission += _FxColor.rgb * _EmissionStrength * pulsePower * 0.15;
+            // Keeps the zombie texture slightly visible in dark game lighting.
+            emission += baseColor.rgb * _SelfLightStrength;
 
-            // Main visible glow around the edges.
+            // Very small inner radioactive/electric/fire glow.
+            emission += _FxColor.rgb * _EmissionStrength * pulsePower * 0.08;
+
+            // Main special-zombie edge glow.
             emission += _RimColor.rgb * rim * _RimStrength;
-
-            // Dissolve edge glow only when dissolve is active.
-            emission += _DissolveEdgeColor.rgb * dissolveEdge * 3.0;
 
             o.Albedo = baseColor;
             o.Emission = emission;
