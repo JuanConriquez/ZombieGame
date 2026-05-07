@@ -63,6 +63,8 @@ public class Zombie : MonoBehaviour, IDamageable
     private float retargetTimer;
     private const float RetargetInterval = 2f;
 
+    private Animator animator;
+
     // ──────────────────────────────────────────────
     //  Events — subscribe in other systems as needed
     // ──────────────────────────────────────────────
@@ -80,6 +82,7 @@ public class Zombie : MonoBehaviour, IDamageable
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     /// <summary>
@@ -175,6 +178,11 @@ public class Zombie : MonoBehaviour, IDamageable
             case ZombieType.Thrower:
                 ThrowerBehaviour(distanceToTarget);
                 break;
+        }
+
+        if (animator != null && agent.enabled)
+        {
+         animator.SetFloat("Speed", agent.velocity.magnitude);
         }
     }
 
