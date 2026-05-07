@@ -811,6 +811,7 @@ GameObject:
   - component: {fileID: -1361103148588097170}
   - component: {fileID: -1314771711503901602}
   - component: {fileID: 6625733571026547421}
+  - component: {fileID: 5721268263865852680}
   m_Layer: 0
   m_Name: Zombie_Example_Runner
   m_TagString: Zombie
@@ -886,7 +887,7 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 4
   attackDamage: 10
-  attackRange: 2
+  attackRange: 5
   attackCooldown: 1.5
   projectilePrefab: {fileID: 0}
   preferredThrowDistance: 10
@@ -1046,6 +1047,28 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 0
+--- !u!95 &5721268263865852680
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206231342170735498}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 8f7380da49034cd488ddff94b1ac35d1, type: 3}
+  m_Controller: {fileID: 9100000, guid: a3446720bd8e77a49b311ca60784a79e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3225202228577806885
 GameObject:
   m_ObjectHideFlags: 0
