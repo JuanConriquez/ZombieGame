@@ -11,7 +11,8 @@ public class PlayerMovement : NetworkBehaviour
 
     private CharacterController controller;
     private float currentCameraYaw;
-    private bool isDead = false;
+    private bool _isDead = false;
+    public bool IsDead => _isDead;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class PlayerMovement : NetworkBehaviour
     // called by Health when hp hits 0
     void OnPlayerDied(GameObject go)
     {
-        isDead = true;
+        _isDead = true;
 
         // hide the player visually
        // foreach (Renderer r in GetComponentsInChildren<Renderer>())
@@ -52,7 +53,7 @@ public class PlayerMovement : NetworkBehaviour
     // called by NetworkGameManager at the start of each countdown so player respawns between waves
     public void Respawn(Vector3 spawnPosition)
     {
-        isDead = false;
+        _isDead = false;
         controller.enabled = true;
         transform.position = spawnPosition;
 
@@ -69,7 +70,7 @@ public class PlayerMovement : NetworkBehaviour
     void Update()
     {
         if (!IsOwner) return;
-        if (isDead) return;
+        if (_isDead) return;
 
         float mouseX = Input.GetAxis("Mouse X");
         currentCameraYaw += mouseX * mouseSensitivity * Time.deltaTime;

@@ -33641,8 +33641,8 @@ MonoBehaviour:
   spawnInterval: 0.8
   autoStart: 1
   baseZombieCount: 8
-  zombiesAddedPerWave: 2
-  maxZombiesPerWave: 60
+  zombiesAddedPerWave: 10
+  maxZombiesPerWave: 100
   healthScalePerWave: 1.15
   runnerUnlockWave: 3
   throwerUnlockWave: 6
