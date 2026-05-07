@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 2141162019344974297}
   - component: {fileID: 2033657929580119248}
   - component: {fileID: 8859045955356729600}
+  - component: {fileID: 5591407111849368701}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -311,6 +312,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieGame.Combat.WeaponController
   ShowTopMostFoldoutHeaderGroup: 1
+  gunAudioSource: {fileID: 0}
+  pistolSound: {fileID: 8300000, guid: a7a31e802df7555458e13a3a5f972e03, type: 3}
+  shotgunSound: {fileID: 8300000, guid: a255a2c0ef6fc644590870056b5eb9d2, type: 3}
+  rifleSound: {fileID: 8300000, guid: a7a31e802df7555458e13a3a5f972e03, type: 3}
+  reloadSound: {fileID: 8300000, guid: fef6eaa0b739b95499f55a986ff149c6, type: 3}
+  gunshotVolume: 1
   loadout:
   - {fileID: 11400000, guid: 10000000000000000000000000000001, type: 2}
   - {fileID: 11400000, guid: 10000000000000000000000000000002, type: 2}
@@ -405,3 +412,16 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &5591407111849368701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3109135602112934729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a87d1455ec26b4eab4a9fb2b4e9948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameHUD
+  ShowTopMostFoldoutHeaderGroup: 1

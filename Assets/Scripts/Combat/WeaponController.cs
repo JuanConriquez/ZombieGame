@@ -12,6 +12,16 @@ namespace ZombieGame.Combat
     [RequireComponent(typeof(Health))]
     public class WeaponController : NetworkBehaviour
     {
+
+       //adding sounds to the gun script itself  
+    public AudioSource gunAudioSource;
+    public AudioClip pistolSound;
+    public AudioClip shotgunSound;
+    public AudioClip rifleSound;
+    public AudioClip reloadSound;
+    public float gunshotVolume = 1f;
+
+
         [Header("Loadout (1, 2, 3 keys)")]
         public WeaponData[] loadout = new WeaponData[3];
         public int startingIndex = 0;
@@ -58,6 +68,16 @@ namespace ZombieGame.Combat
         {
             _health = GetComponent<Health>();
 
+            if (gunAudioSource == null)
+            {
+            gunAudioSource = GetComponent<AudioSource>();
+
+            if (gunAudioSource == null)
+            gunAudioSource = gameObject.AddComponent<AudioSource>();
+            }
+            gunAudioSource.playOnAwake = false;
+            gunAudioSource.spatialBlend = 1f;
+
             if (muzzle == null)
             {
                 var go = new GameObject("Muzzle");
@@ -74,6 +94,32 @@ namespace ZombieGame.Combat
             _visuals = GetComponent<SimplePlayerGunVisuals>();
             if (_visuals == null) _visuals = gameObject.AddComponent<SimplePlayerGunVisuals>();
         }
+
+        void PlayGunshotSound(WeaponData data)
+{
+    if (gunAudioSource == null || data == null) return;
+
+    AudioClip clip = null;
+
+    switch (data.kind)
+    {
+        case WeaponKind.Shotgun:
+            clip = shotgunSound;
+            break;
+
+        case WeaponKind.AssaultRifle:
+            clip = rifleSound;
+            break;
+
+        default:
+            clip = pistolSound;
+            break;
+    }
+
+    if (clip != null)
+        gunAudioSource.PlayOneShot(clip, gunshotVolume);
+    }
+
 
         void Start()
         {
@@ -179,6 +225,9 @@ namespace ZombieGame.Combat
         {
             _isReloading = true;
             _reloadEndsAt = Time.time + Current.Data.reloadSeconds;
+
+            if (gunAudioSource != null && reloadSound != null)
+        gunAudioSource.PlayOneShot(reloadSound, gunshotVolume);
         }
 
         void FinishReload()
@@ -292,6 +341,9 @@ namespace ZombieGame.Combat
 
         void DoLocalShotVisuals(Vector3 origin, Vector3 forward, WeaponData data)
         {
+            PlayGunshotSound(data);
+
+
             if (_muzzleFlash != null)
                 _muzzleFlash.Flash(data.muzzleLightColor, data.muzzleLightIntensity, data.muzzleLightRange, data.muzzleLightSeconds);
             if (_hud != null) _hud.PulseCrosshair(Mathf.InverseLerp(data.baseSpreadDeg, data.maxSpreadDeg, _currentSpreadDeg));
