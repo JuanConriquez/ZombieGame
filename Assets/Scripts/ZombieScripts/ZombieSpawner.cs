@@ -62,6 +62,22 @@ public class ZombieSpawner : MonoBehaviour
     [Tooltip("Optional parent Transform to keep the hierarchy tidy.")]
     [SerializeField] private Transform zombieContainer;
 
+    [Header("Spawn Points")]
+    public Transform[] spawnPoints;
+
+    private Vector3 GetRandomSpawnPoint()
+    {
+        if(spawnPoints.Length == 0)
+        {
+            return transform.position;
+        }
+        return spawnPoints[Random.Range(0, spawnPoints.Length)].position;
+    }
+
+    public Zombie Spawn(ZombieType type, float speed, float health)
+    {
+        return Spawn(type, speed, health, GetRandomSpawnPoint());
+    }
     // ──────────────────────────────────────────────
     //  Events
     // ──────────────────────────────────────────────
