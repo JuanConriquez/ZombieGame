@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using ZombieGame.Combat;
+using Unity.Netcode;
 
 /// <summary>
 /// The four zombie archetypes available in the game.
@@ -59,6 +60,8 @@ public class Zombie : MonoBehaviour, IDamageable
     private Transform target;          // Usually the player
     private float attackTimer;
     private bool isDead;
+    private float retargetTimer;
+    private const float RetargetInterval = 2f;
 
     // ──────────────────────────────────────────────
     //  Events — subscribe in other systems as needed
@@ -138,9 +141,23 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (isDead || target == null) return;
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening && !NetworkManager.Singleton.IsServer) return;
+        if (isDead) return;
 
         attackTimer += Time.deltaTime;
+
+        retargetTimer += Time.deltaTime;
+        if (retargetTimer >= RetargetInterval)
+        {
+            retargetTimer = 0f;
+            UpdateNearestTarget();
+        }
+
+        if (target == null)
+        {
+            UpdateNearestTarget();
+            return;
+        }
 
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
@@ -333,6 +350,27 @@ public class Zombie : MonoBehaviour, IDamageable
     public void ApplyDamage(float amount, GameObject source, Vector3 hitPoint, Vector3 hitNormal)
     {
         TakeDamage(amount);
+    }
+    private void UpdateNearestTarget()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        Transform nearest = null;
+        float nearestDist = float.MaxValue;
+
+        foreach (GameObject p in players)
+        {
+            float dist = Vector3.Distance(transform.position, p.transform.position);
+            if(dist < nearestDist)
+            {
+                nearestDist = dist;
+                nearest = p.transform;
+            }
+        }
+        if(nearest != null)
+        {
+            target = nearest;
+        }
+
     }
 
     /// <summary>Swap the chase target at runtime (e.g. player dies, new target assigned).</summary>

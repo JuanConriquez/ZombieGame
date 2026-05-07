@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Unity.Netcode;
 
 /// <summary>
 /// Attach to any GameObject in your scene to act as a zombie factory.
@@ -118,8 +119,22 @@ public class ZombieSpawner : MonoBehaviour
 
         // 3. Instantiate
         Transform parent = zombieContainer != null ? zombieContainer : transform;
-        GameObject go    = Instantiate(prefab, navPosition, Quaternion.identity, parent);
-        go.name          = $"{type}_Zombie";
+        GameObject go;
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
+        {
+            go = Instantiate(prefab, navPosition, Quaternion.identity, parent);
+            go.GetComponent<NetworkObject>().Spawn();
+        }
+        else if (NetworkManager.Singleton == null)
+        {
+            go = Instantiate(prefab, navPosition, Quaternion.identity, parent);
+        }
+        else
+        {
+            Debug.LogWarning("[ZombieSpawner] Client attempted to spawn a zombie. Only server can spawn");
+            return null;
+        }
+        go.name = $"{type}_Zombie";
 
         // 4. Get & validate the Zombie component
         if (!go.TryGetComponent<Zombie>(out var zombie))
@@ -131,14 +146,9 @@ public class ZombieSpawner : MonoBehaviour
         }
 
         // 5. Resolve chase target
-        Transform chase = playerTarget;
+        Transform chase = GetNearestPlayer(navPosition);
         if (chase == null)
-        {
-            // Fallback: find by tag
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null) chase = player.transform;
-        }
-
+       
         // 6. Initialise stats
         zombie.Initialize(type, speed, health, chase);
 
@@ -226,6 +236,32 @@ public class ZombieSpawner : MonoBehaviour
     // ──────────────────────────────────────────────
     //  Built-in fallback defaults (used when no ZombieData SO is assigned)
     // ──────────────────────────────────────────────
+
+    private Transform GetNearestPlayer(Vector3 fromPosition)
+    {
+        if (playerTarget != null) return playerTarget;
+
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        Transform nearest = null;
+        float nearestDist = float.MaxValue;
+
+        foreach (GameObject p in players)
+        {
+            float dist = Vector3.Distance(fromPosition, p.transform.position);
+            if(dist < nearestDist)
+            {
+                nearestDist = dist;
+                nearest = p.transform;
+            }
+        }
+        if(nearest == null)
+        {
+            Debug.LogWarning("[ZombieSpawner] No GameObjects tagged 'Player' found Zombie has no target.");
+        }
+        return nearest;
+    }
+
 
     private static float GetBuiltInSpeed(ZombieType type) => type switch
     {
