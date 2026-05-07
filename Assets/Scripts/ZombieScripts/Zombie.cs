@@ -289,7 +289,11 @@ public class Zombie : MonoBehaviour, IDamageable
     /// <summary>Apply damage to this zombie. Returns true if the hit was lethal.</summary>
     public bool TakeDamage(float damage)
     {
+        if (NetworkManager.Singleton != null && !NetworkManager.Singleton.IsServer) return false;
         if (isDead) return false;
+
+        Debug.Log($"Zombie took {damage} damage, health before: {currentHealth}");
+
 
         currentHealth -= damage;
         currentHealth  = Mathf.Max(currentHealth, 0f);
