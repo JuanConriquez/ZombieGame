@@ -21,15 +21,19 @@ public class PlayerMovement : NetworkBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-
         controller = GetComponent<CharacterController>();
-
-        if (playerCamera == null)
+    }
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
         {
             playerCamera = GetComponentInChildren<Camera>();
-            if (playerCamera == null)
-                playerCamera = Camera.main;
+
+        }
+        else
+        {
+            Camera cam = GetComponentInChildren<Camera>();
+            if (cam != null) cam.gameObject.SetActive(false);
         }
     }
 
@@ -78,6 +82,7 @@ public class PlayerMovement : NetworkBehaviour
 
     void LateUpdate()
     {
+        if (!IsOwner) return;
         if (playerCamera == null) return;
 
        // currentCameraYaw = Mathf.MoveTowardsAngle(

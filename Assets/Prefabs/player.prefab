@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2286303428
+  GlobalObjectIdHash: 1958324646
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -280,9 +280,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   moveSpeed: 6
   playerCamera: {fileID: 3390043528281862927}
-  rotateCameraLeftKey: 113
-  rotateCameraRightKey: 101
-  cameraRotateSpeed: 420
+  mouseSensitivity: 120
 --- !u!114 &3524451019981838854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,9 +340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e53289b5f130740897f94d80f93c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieGame.Combat.PlayerVisionLight
-  range: 10
+  range: 15
   spotAngle: 85
-  intensity: 2
+  intensity: 3
   color: {r: 1, g: 0.95, b: 0.85, a: 1}
   localOffset: {x: 0, y: 0.9, z: 0.15}
   downwardTiltDeg: 38
