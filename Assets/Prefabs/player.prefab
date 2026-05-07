@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2286303428
+  GlobalObjectIdHash: 1958324646
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -312,6 +312,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieGame.Combat.WeaponController
   ShowTopMostFoldoutHeaderGroup: 1
+  gunAudioSource: {fileID: 0}
+  pistolSound: {fileID: 8300000, guid: a7a31e802df7555458e13a3a5f972e03, type: 3}
+  shotgunSound: {fileID: 8300000, guid: a255a2c0ef6fc644590870056b5eb9d2, type: 3}
+  rifleSound: {fileID: 8300000, guid: a7a31e802df7555458e13a3a5f972e03, type: 3}
+  reloadSound: {fileID: 8300000, guid: fef6eaa0b739b95499f55a986ff149c6, type: 3}
+  gunshotVolume: 1
   loadout:
   - {fileID: 11400000, guid: 10000000000000000000000000000001, type: 2}
   - {fileID: 11400000, guid: 10000000000000000000000000000002, type: 2}
