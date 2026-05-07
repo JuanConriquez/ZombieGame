@@ -42,8 +42,8 @@ public class PlayerMovement : NetworkBehaviour
         isDead = true;
 
         // hide the player visually
-        foreach (Renderer r in GetComponentsInChildren<Renderer>())
-            r.enabled = false;
+       // foreach (Renderer r in GetComponentsInChildren<Renderer>())
+         //   r.enabled = false;
 
         // stop movement
         controller.enabled = false;
@@ -57,8 +57,8 @@ public class PlayerMovement : NetworkBehaviour
         transform.position = spawnPosition;
 
         // show the player again
-        foreach (Renderer r in GetComponentsInChildren<Renderer>())
-            r.enabled = true;
+        //foreach (Renderer r in GetComponentsInChildren<Renderer>())
+           // r.enabled = true;
 
         // heal back to full — only server can write to the NetworkVariable
         Health health = GetComponent<Health>();
