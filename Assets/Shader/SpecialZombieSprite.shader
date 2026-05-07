@@ -6,9 +6,10 @@ Shader "Custom/3D/Zombie Special FX"
         _Color ("Base Color", Color) = (1,1,1,1)
 
         _FxColor ("FX Color", Color) = (0.2, 1, 0.2, 1)
-        _BodyTintAmount ("Body Tint Amount", Range(0, 1)) = 0.06
+        _BodyTintAmount ("Body Tint Amount", Range(0, 1)) = 0.04
+        _SelfLightStrength ("Self Light Strength", Range(0, 1)) = 0.15
 
-        _EmissionStrength ("Emission Strength", Range(0, 3)) = 0.05
+        _EmissionStrength ("Emission Strength", Range(0, 3)) = 0.03
         _PulseStrength ("Pulse Strength", Range(0, 3)) = 0.3
         _PulseSpeed ("Pulse Speed", Range(0, 20)) = 2.5
 
@@ -47,6 +48,7 @@ Shader "Custom/3D/Zombie Special FX"
         fixed4 _Color;
         fixed4 _FxColor;
         float _BodyTintAmount;
+        float _SelfLightStrength;
 
         float _EmissionStrength;
         float _PulseStrength;
@@ -86,10 +88,10 @@ Shader "Custom/3D/Zombie Special FX"
         {
             fixed4 tex = tex2D(_MainTex, IN.uv_MainTex);
 
-            // Keep the original zombie texture visible.
+            // Original zombie texture.
             fixed3 baseColor = tex.rgb * _Color.rgb;
 
-            // Small special-zombie tint. This prevents the whole zombie from becoming solid neon.
+            // Small special-zombie tint.
             baseColor = lerp(baseColor, _FxColor.rgb, _BodyTintAmount);
 
             // Hit flash.
@@ -99,9 +101,8 @@ Shader "Custom/3D/Zombie Special FX"
             float dissolveNoise = hash(floor(IN.worldPos * _DissolveScale));
             float dissolveEdge = 0.0;
 
-            // Important:
-            // Dissolve only activates when Dissolve Amount is above 0.
-            // This prevents green square patches from showing during normal gameplay.
+            // Only activate dissolve when Dissolve Amount is above 0.
+            // This prevents green/blue square patches during normal gameplay.
             if (_DissolveAmount > 0.001)
             {
                 clip(dissolveNoise - _DissolveAmount);
@@ -117,7 +118,7 @@ Shader "Custom/3D/Zombie Special FX"
             float pulse = sin(_Time.y * _PulseSpeed) * 0.5 + 0.5;
             float pulsePower = 1.0 + pulse * _PulseStrength;
 
-            // Rim glow around the zombie edges.
+            // Rim glow.
             float3 normalDirection = normalize(IN.worldNormal);
             float3 viewDirection = normalize(IN.viewDir);
 
@@ -126,13 +127,16 @@ Shader "Custom/3D/Zombie Special FX"
 
             fixed3 emission = 0;
 
-            // Very subtle body glow.
-            emission += _FxColor.rgb * _EmissionStrength * pulsePower * 0.15;
+            // Keeps the zombie texture visible in dark gameplay lighting.
+            emission += baseColor.rgb * _SelfLightStrength;
 
-            // Main visible glow around the edges.
+            // Small body glow for the special type.
+            emission += _FxColor.rgb * _EmissionStrength * pulsePower * 0.08;
+
+            // Main glow around the edges.
             emission += _RimColor.rgb * rim * _RimStrength;
 
-            // Dissolve edge glow only when dissolve is active.
+            // Dissolve edge glow only when dissolving.
             emission += _DissolveEdgeColor.rgb * dissolveEdge * 3.0;
 
             o.Albedo = baseColor;

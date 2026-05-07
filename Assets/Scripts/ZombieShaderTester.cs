@@ -12,10 +12,10 @@ public class ZombieShaderTester : MonoBehaviour
 
     private void Update()
     {
+        if (zombieFX == null)
+            return;
+
         if (Input.GetKeyDown(KeyCode.F))
             zombieFX.PlayHitFlash();
-
-        if (Input.GetKeyDown(KeyCode.X))
-            zombieFX.PlayDissolve();
     }
 }
