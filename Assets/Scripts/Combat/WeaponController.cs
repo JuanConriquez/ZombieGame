@@ -362,6 +362,38 @@ namespace ZombieGame.Combat
             dmg.ApplyDamage(damage, gameObject, hitPoint, hitNormal);
         }
 
+        /// <summary>
+        /// Offline / local: refill reserves. networked: server only (use RequestCollectAmmoPickupServerRpc from clients).
+        /// </summary>
+        public void GrantAmmoBox()
+        {
+            if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening && !IsServer) return;
+            ApplyAmmoBoxRefill();
+            RefreshHud();
+        }
+
+        [Rpc(SendTo.Server)]
+        public void RequestCollectAmmoPickupServerRpc(ulong pickupNetworkObjectId)
+        {
+            ApplyAmmoBoxRefill();
+            RefreshHud();
+
+            if (pickupNetworkObjectId == 0UL) return;
+            if (NetworkManager.Singleton == null) return;
+            if (!NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(pickupNetworkObjectId, out NetworkObject pickup)) return;
+            pickup.Despawn(true);
+        }
+
+        void ApplyAmmoBoxRefill()
+        {
+            for (int i = 0; i < _runtime.Count; i++)
+            {
+                WeaponRuntime slot = _runtime[i];
+                if (slot.Data == null) continue;
+                slot.Reserve = Mathf.Max(slot.Reserve, slot.Data.reserveAmmoStart);
+            }
+        }
+
         [Rpc(SendTo.NotMe)]
         void BroadcastShotRpc(Vector3 origin, Vector3 forward, float spreadDeg, int weaponIndex)
         {
