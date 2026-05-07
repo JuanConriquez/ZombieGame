@@ -77,7 +77,7 @@ public class WaveManager : NetworkBehaviour
     [Header("Health Scaling")]
     [Tooltip("Each wave, zombie health is multiplied by this value raised to (wave-1).\n" +
              "1.15 = +15% per wave compounding. Wave 5 ≈ 1.75×, wave 10 ≈ 4×.")]
-    [SerializeField, Range(1f, 2f)] private float healthScalePerWave = 1.15f;
+    [SerializeField, Range(1f, 2f)] private float healthScalePerWave = 1.05f;
 
     // ──────────────────────────────────────────────
     //  Inspector — Type Unlocks
@@ -310,11 +310,11 @@ public class WaveManager : NetworkBehaviour
             ZombieType type  = PickZombieType(wave, tanksCapped);
             if (type == ZombieType.Tank) tanksUsed++;
 
-            // Health scales exponentially. Speed gets a gentle nudge every 5 waves, capped at +50%.
+            // Health scales exponentially. Speed gets a small nudge every 5 waves, capped at +25%.
             float baseHealth    = BaseHealth(type);
             float baseSpeed     = BaseSpeed(type);
             float scaledHealth  = baseHealth * healthMult;
-            float scaledSpeed   = Mathf.Min(baseSpeed * (1f + (wave / 5) * 0.05f), baseSpeed * 1.5f);
+            float scaledSpeed   = Mathf.Min(baseSpeed * (1f + (wave / 5) * 0.02f), baseSpeed * 1.25f);
 
             list.Add(new SpawnEntry { Type = type, Health = scaledHealth, Speed = scaledSpeed });
         }
@@ -379,18 +379,18 @@ public class WaveManager : NetworkBehaviour
 
     private static float BaseHealth(ZombieType t) => t switch
     {
-        ZombieType.Regular => 100f,
-        ZombieType.Tank    => 500f,
+        ZombieType.Regular => 90f,
+        ZombieType.Tank    => 350f,
         ZombieType.Runner  =>  60f,
         ZombieType.Thrower =>  80f,
-        _                  => 100f
+        _                  => 90f
     };
 
     private static float BaseSpeed(ZombieType t) => t switch
     {
         ZombieType.Regular => 3.5f,
         ZombieType.Tank    => 1.5f,
-        ZombieType.Runner  => 12.0f,
+        ZombieType.Runner  => 8.0f,
         ZombieType.Thrower => 3.0f,
         _                  => 3.5f
     };

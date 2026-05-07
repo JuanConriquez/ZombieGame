@@ -64,6 +64,10 @@ namespace ZombieGame.Combat
         public int CurrentWeaponIndex => _currentIndex;
         public WeaponData ActiveWeaponData => _runtime.Count == 0 ? null : Current.Data;
 
+        [Header("Balance")]
+        [Tooltip("Multiplier applied when this gun damages zombies. Lower values make zombies harder to one-shot.")]
+        [SerializeField, Range(0.1f, 1f)] private float damageToZombieMultiplier = 1f;
+
         void Awake()
         {
             _health = GetComponent<Health>();
@@ -291,15 +295,20 @@ namespace ZombieGame.Combat
 
                     if (dmg != null)
                     {
+                        float finalDamage = data.damagePerPellet;
+                        var zombieTarget = dmg as Zombie ?? (dmg as Component)?.GetComponentInParent<Zombie>();
+                        if (zombieTarget != null)
+                            finalDamage *= damageToZombieMultiplier;
+
                         if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening)
                         {
                             var netObj = (dmg as Component)?.GetComponentInParent<NetworkObject>();
                             if (netObj != null)
-                                RequestDamageRpc(netObj.NetworkObjectId, data.damagePerPellet, hit.point, hit.normal);
+                                RequestDamageRpc(netObj.NetworkObjectId, finalDamage, hit.point, hit.normal);
                         }
                         else
                         {
-                            dmg.ApplyDamage(data.damagePerPellet, gameObject, hit.point, hit.normal);
+                            dmg.ApplyDamage(finalDamage, gameObject, hit.point, hit.normal);
                         }
                     }
                 }
@@ -456,6 +465,19 @@ namespace ZombieGame.Combat
             magazine = slot.Magazine;
             reserve = slot.Reserve;
             return data != null;
+        }
+
+        public void GrantAmmoBox()
+        {
+            if (_runtime.Count == 0) return;
+
+            foreach (var weapon in _runtime)
+            {
+                if (weapon.Data == null) continue;
+                weapon.Reserve = Mathf.Max(weapon.Reserve, weapon.Data.reserveAmmoStart);
+            }
+
+            RefreshHud();
         }
 
         class WeaponRuntime
