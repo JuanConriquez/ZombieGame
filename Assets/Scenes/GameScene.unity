@@ -33587,9 +33587,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
   regularPrefab: {fileID: 3206231342170735498, guid: 4c286ae99685751459e761852cd8ac2a, type: 3}
-  tankPrefab: {fileID: 3206231342170735498, guid: 4c286ae99685751459e761852cd8ac2a, type: 3}
-  runnerPrefab: {fileID: 3206231342170735498, guid: 4c286ae99685751459e761852cd8ac2a, type: 3}
-  throwerPrefab: {fileID: 3206231342170735498, guid: 4c286ae99685751459e761852cd8ac2a, type: 3}
+  tankPrefab: {fileID: 3206231342170735498, guid: fb8dfbf81830c6648892265d496519b7, type: 3}
+  runnerPrefab: {fileID: 3206231342170735498, guid: 79c92adca93f1dd41b001568fbc831dc, type: 3}
+  throwerPrefab: {fileID: 3206231342170735498, guid: 5ea44d250b685a143a2335ac10e80187, type: 3}
   regularData: {fileID: 0}
   tankData: {fileID: 0}
   runnerData: {fileID: 0}
@@ -33644,9 +33644,9 @@ MonoBehaviour:
   zombiesAddedPerWave: 2
   maxZombiesPerWave: 60
   healthScalePerWave: 1.15
-  runnerUnlockWave: 3
-  throwerUnlockWave: 6
-  tankUnlockWave: 10
+  runnerUnlockWave: 1
+  throwerUnlockWave: 1
+  tankUnlockWave: 1
   maxTankFraction: 0.15
 --- !u!1 &2100637529
 GameObject:
