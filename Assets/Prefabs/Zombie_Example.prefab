@@ -804,13 +804,9 @@ GameObject:
   - component: {fileID: -6761033170917269695}
   - component: {fileID: -7710149073450263209}
   - component: {fileID: -5433106830726358781}
-<<<<<<< Updated upstream
-=======
+
   - component: {fileID: -1361103148588097170}
   - component: {fileID: -1314771711503901602}
-  - component: {fileID: 2691189414619432112}
-  - component: {fileID: 1773274794286331391}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Zombie_Example
   m_TagString: Zombie
@@ -886,7 +882,7 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 3.5
   attackDamage: 10
-  attackRange: 2
+  attackRange: 4
   attackCooldown: 1.5
   projectilePrefab: {fileID: 0}
   preferredThrowDistance: 10
@@ -913,8 +909,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &-1361103148588097170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,22 +980,7 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &2691189414619432112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3206231342170735498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcfc08a047f9f3d4aa549ed9380bdfea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WholezombieshaderFXController
-  targetRenderers: []
-  flashDuration: 0.08
-  dissolveDuration: 0.75
---- !u!114 &1773274794286331391
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1014,7 +993,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieShaderTester
   zombieFX: {fileID: 2691189414619432112}
->>>>>>> Stashed changes
 --- !u!1 &3225202228577806885
 GameObject:
   m_ObjectHideFlags: 0

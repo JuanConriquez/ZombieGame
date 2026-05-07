@@ -358,21 +358,20 @@ public class WaveManager : NetworkBehaviour
     /// </summary>
     private ZombieType PickZombieType(int wave, bool tanksCapped)
     {
-        // Each non-Regular weight ramps up by a small amount per wave after unlock.
-        float runnerW  = wave >= runnerUnlockWave  ? Mathf.Min(0.25f, (wave - runnerUnlockWave  + 1) * 0.04f) : 0f;
-        float throwerW = wave >= throwerUnlockWave ? Mathf.Min(0.20f, (wave - throwerUnlockWave + 1) * 0.03f) : 0f;
-        float tankW    = (wave >= tankUnlockWave && !tanksCapped) ? Mathf.Min(0.15f, (wave - tankUnlockWave + 1) * 0.02f) : 0f;
+        // Equal 25% chance for each unlocked type.
+        float regularW = 0.25f;
+        float runnerW  = wave >= runnerUnlockWave                       ? 0.25f : 0f;
+        float throwerW = wave >= throwerUnlockWave                      ? 0.25f : 0f;
+        float tankW    = wave >= tankUnlockWave && !tanksCapped          ? 0.25f : 0f;
 
-        // Regular fills the remainder, never dropping below 40% of the pool.
-        float regularW = Mathf.Max(0.40f, 1f - runnerW - throwerW - tankW);
-        float total    = regularW + runnerW + throwerW + tankW;
-        float roll     = Random.value * total;
+        float total = regularW + runnerW + throwerW + tankW;
+        float roll  = Random.value * total;
 
-        if (roll < regularW)             return ZombieType.Regular;
+        if (roll < regularW)        return ZombieType.Regular;
         roll -= regularW;
-        if (roll < runnerW)              return ZombieType.Runner;
+        if (roll < runnerW)         return ZombieType.Runner;
         roll -= runnerW;
-        if (roll < throwerW)             return ZombieType.Thrower;
+        if (roll < throwerW)        return ZombieType.Thrower;
         return ZombieType.Tank;
     }
 
@@ -390,8 +389,8 @@ public class WaveManager : NetworkBehaviour
     private static float BaseSpeed(ZombieType t) => t switch
     {
         ZombieType.Regular => 3.5f,
-        ZombieType.Tank    => 2.0f,
-        ZombieType.Runner  => 7.0f,
+        ZombieType.Tank    => 1.5f,
+        ZombieType.Runner  => 12.0f,
         ZombieType.Thrower => 3.0f,
         _                  => 3.5f
     };

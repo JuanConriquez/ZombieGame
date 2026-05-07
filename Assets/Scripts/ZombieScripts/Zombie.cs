@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using ZombieGame.Combat;
+using Unity.Netcode;
 
 /// <summary>
 /// The four zombie archetypes available in the game.
@@ -59,6 +60,8 @@ public class Zombie : MonoBehaviour, IDamageable
     private Transform target;          // Usually the player
     private float attackTimer;
     private bool isDead;
+    private float retargetTimer;
+    private const float RetargetInterval = 2f;
 
     // ──────────────────────────────────────────────
     //  Events — subscribe in other systems as needed
@@ -104,21 +107,21 @@ public class Zombie : MonoBehaviour, IDamageable
         {
             case ZombieType.Regular:
                 attackDamage  = 10f;
-                attackRange   = 2f;
+                attackRange   = 4f;
                 attackCooldown = 1.5f;
                 agent.stoppingDistance = 1.5f;
                 break;
 
             case ZombieType.Tank:
                 attackDamage  = 25f;
-                attackRange   = 2.5f;
+                attackRange   = 4.5f;
                 attackCooldown = 2.5f;
                 agent.stoppingDistance = 2f;
                 break;
 
             case ZombieType.Runner:
                 attackDamage  = 8f;
-                attackRange   = 1.5f;
+                attackRange   = 3.5f;
                 attackCooldown = 0.8f;
                 agent.stoppingDistance = 1f;
                 break;
@@ -138,9 +141,23 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (isDead || target == null) return;
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening && !NetworkManager.Singleton.IsServer) return;
+        if (isDead) return;
 
         attackTimer += Time.deltaTime;
+
+        retargetTimer += Time.deltaTime;
+        if (retargetTimer >= RetargetInterval)
+        {
+            retargetTimer = 0f;
+            UpdateNearestTarget();
+        }
+
+        if (target == null)
+        {
+            UpdateNearestTarget();
+            return;
+        }
 
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
@@ -169,7 +186,7 @@ public class Zombie : MonoBehaviour, IDamageable
     private void ChaseAndMelee(float distance)
     {
         agent.SetDestination(target.position);
-
+        Debug.Log($"[Zombie] distance to player: {distance} attackRange: {attackRange} timer: {attackTimer}");
         if (distance <= attackRange && attackTimer >= attackCooldown)
         {
             PerformMeleeAttack();
@@ -219,16 +236,23 @@ public class Zombie : MonoBehaviour, IDamageable
     {
         attackTimer = 0f;
 
-        // Try to damage whatever has an IDamageable interface on the target
-        if (target.TryGetComponent<IDamageable>(out var damageable))
+        // Check the target and its parents for IDamageable
+        // because Health might be on the root player, not a child object
+        IDamageable damageable = target.GetComponentInParent<IDamageable>();
+        if (damageable != null)
         {
             Vector3 hitNormal = (target.position - transform.position).normalized;
             damageable.ApplyDamage(attackDamage, gameObject, target.position, hitNormal);
+            Debug.Log($"[Zombie] Damage applied to {target.name}");
+        }
+        else
+        {
+            Debug.LogWarning($"[Zombie] No IDamageable found on {target.name} or its parents!");
         }
 
-        // Hook: override or subscribe to add animations, sounds, particles
-        OnMeleeAttack();
-    }
+            // Hook: override or subscribe to add animations, sounds, particles
+            OnMeleeAttack();
+        }
 
     private void PerformRangedAttack()
     {
@@ -333,6 +357,27 @@ public class Zombie : MonoBehaviour, IDamageable
     public void ApplyDamage(float amount, GameObject source, Vector3 hitPoint, Vector3 hitNormal)
     {
         TakeDamage(amount);
+    }
+    private void UpdateNearestTarget()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        Transform nearest = null;
+        float nearestDist = float.MaxValue;
+
+        foreach (GameObject p in players)
+        {
+            float dist = Vector3.Distance(transform.position, p.transform.position);
+            if(dist < nearestDist)
+            {
+                nearestDist = dist;
+                nearest = p.transform;
+            }
+        }
+        if(nearest != null)
+        {
+            target = nearest;
+        }
+
     }
 
     /// <summary>Swap the chase target at runtime (e.g. player dies, new target assigned).</summary>
