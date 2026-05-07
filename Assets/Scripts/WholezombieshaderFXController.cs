@@ -7,31 +7,34 @@ public class WholezombieshaderFXController : MonoBehaviour
     [SerializeField] private Renderer[] targetRenderers;
 
     [Header("Hit Flash")]
+    [SerializeField] private Color hitFlashColor = Color.white;
     [SerializeField] private float flashDuration = 0.08f;
 
-    [Header("Dissolve")]
-    [SerializeField] private float dissolveDuration = 0.75f;
-
     private MaterialPropertyBlock[] propertyBlocks;
-
-    private static readonly int FlashAmountID = Shader.PropertyToID("_FlashAmount");
-    private static readonly int DissolveAmountID = Shader.PropertyToID("_DissolveAmount");
-
     private Coroutine flashRoutine;
-    private Coroutine dissolveRoutine;
+
+    private static readonly int FlashColorID = Shader.PropertyToID("_FlashColor");
+    private static readonly int FlashAmountID = Shader.PropertyToID("_FlashAmount");
 
     private void Awake()
     {
+        CacheRenderers();
+        ResetFlash();
+    }
+
+    private void CacheRenderers()
+    {
         if (targetRenderers == null || targetRenderers.Length == 0)
-            targetRenderers = GetComponentsInChildren<Renderer>();
+        {
+            targetRenderers = GetComponentsInChildren<Renderer>(true);
+        }
 
         propertyBlocks = new MaterialPropertyBlock[targetRenderers.Length];
 
         for (int i = 0; i < propertyBlocks.Length; i++)
+        {
             propertyBlocks[i] = new MaterialPropertyBlock();
-
-        SetFloatOnAll(FlashAmountID, 0f);
-        SetFloatOnAll(DissolveAmountID, 0f);
+        }
     }
 
     public void PlayHitFlash()
@@ -42,50 +45,40 @@ public class WholezombieshaderFXController : MonoBehaviour
         flashRoutine = StartCoroutine(HitFlashRoutine());
     }
 
-    public void PlayDissolve()
-    {
-        if (dissolveRoutine != null)
-            StopCoroutine(dissolveRoutine);
-
-        dissolveRoutine = StartCoroutine(DissolveRoutine());
-    }
-
     private IEnumerator HitFlashRoutine()
     {
-        SetFloatOnAll(FlashAmountID, 1f);
+        SetFlash(1f);
 
         yield return new WaitForSeconds(flashDuration);
 
-        SetFloatOnAll(FlashAmountID, 0f);
+        SetFlash(0f);
+
+        flashRoutine = null;
     }
 
-    private IEnumerator DissolveRoutine()
+    private void ResetFlash()
     {
-        float timer = 0f;
-
-        while (timer < dissolveDuration)
-        {
-            timer += Time.deltaTime;
-            float t = timer / dissolveDuration;
-
-            SetFloatOnAll(DissolveAmountID, t);
-
-            yield return null;
-        }
-
-        SetFloatOnAll(DissolveAmountID, 1f);
+        SetFlash(0f);
     }
 
-    private void SetFloatOnAll(int propertyID, float value)
+    private void SetFlash(float amount)
     {
+        if (targetRenderers == null || propertyBlocks == null)
+            return;
+
         for (int i = 0; i < targetRenderers.Length; i++)
         {
-            if (targetRenderers[i] == null)
+            Renderer currentRenderer = targetRenderers[i];
+
+            if (currentRenderer == null)
                 continue;
 
-            targetRenderers[i].GetPropertyBlock(propertyBlocks[i]);
-            propertyBlocks[i].SetFloat(propertyID, value);
-            targetRenderers[i].SetPropertyBlock(propertyBlocks[i]);
+            currentRenderer.GetPropertyBlock(propertyBlocks[i]);
+
+            propertyBlocks[i].SetColor(FlashColorID, hitFlashColor);
+            propertyBlocks[i].SetFloat(FlashAmountID, amount);
+
+            currentRenderer.SetPropertyBlock(propertyBlocks[i]);
         }
     }
 }
