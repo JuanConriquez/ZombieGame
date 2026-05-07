@@ -60,6 +60,7 @@ public class NetworkGameManager : NetworkBehaviour
             PlayerMovement pm = client.PlayerObject.GetComponent<PlayerMovement>();
             if (pm == null) continue;
 
+            if (!pm.IsDead) continue;
             // player 1 is client 0 (host), player 2 is client 1
             Vector3 spawnPos = client.ClientId == 0 ? player1Spawn.position : player2Spawn.position;
             pm.Respawn(spawnPos);

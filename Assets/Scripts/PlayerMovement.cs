@@ -12,6 +12,7 @@ public class PlayerMovement : NetworkBehaviour
     private CharacterController controller;
     private float currentCameraYaw;
     private bool isDead = false;
+    public bool IsDead => isDead;
 
     void Start()
     {
