@@ -6,9 +6,11 @@ public class PlayerMovement : NetworkBehaviour
     {
         public float moveSpeed = 6f;
         public Camera playerCamera;
-        public KeyCode rotateCameraLeftKey = KeyCode.Q;
-        public KeyCode rotateCameraRightKey = KeyCode.E;
-        public float cameraRotateSpeed = 420f;
+       // public KeyCode rotateCameraLeftKey = KeyCode.Q;
+        //public KeyCode rotateCameraRightKey = KeyCode.E;
+       // public float cameraRotateSpeed = 420f;
+       
+        public float mouseSensitivity = 120f;
 
         private CharacterController controller;
         private float targetCameraYaw;
@@ -19,6 +21,8 @@ public class PlayerMovement : NetworkBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+
         controller = GetComponent<CharacterController>();
 
         if (playerCamera == null)
@@ -33,7 +37,9 @@ public class PlayerMovement : NetworkBehaviour
     void Update()
     {
         // if (!IsOwner) return;
-        HandleCameraRotationInput();
+        //HandleCameraRotationInput();
+        float mouseX = Input.GetAxis("Mouse X");
+        currentCameraYaw += mouseX * mouseSensitivity * Time.deltaTime;
 
         float h = Input.GetAxis("Horizontal"); //A/D
         float v = Input.GetAxis("Vertical"); // W/S
@@ -61,26 +67,29 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-    void HandleCameraRotationInput()
-    {
-        if (Input.GetKeyDown(rotateCameraLeftKey))
-            targetCameraYaw -= 90f;
+   // void HandleCameraRotationInput()
+   // {
+    //    if (Input.GetKeyDown(rotateCameraLeftKey))
+    //        targetCameraYaw -= 90f;
 
-        if (Input.GetKeyDown(rotateCameraRightKey))
-            targetCameraYaw += 90f;
-    }
+   //     if (Input.GetKeyDown(rotateCameraRightKey))
+           // targetCameraYaw += 90f;
+  //  }
 
     void LateUpdate()
     {
         if (playerCamera == null) return;
 
-        currentCameraYaw = Mathf.MoveTowardsAngle(
-            currentCameraYaw,
-            targetCameraYaw,
-            cameraRotateSpeed * Time.deltaTime);
+       // currentCameraYaw = Mathf.MoveTowardsAngle(
+        //    currentCameraYaw,
+         //   targetCameraYaw,
+         //   cameraRotateSpeed * Time.deltaTime);
 
+     //   Vector3 cameraOffset = Quaternion.Euler(0f, currentCameraYaw, 0f) * new Vector3(0f, 30f, 35f);
+       // playerCamera.transform.position = transform.position + cameraOffset;
+       // playerCamera.transform.LookAt(transform.position);
         Vector3 cameraOffset = Quaternion.Euler(0f, currentCameraYaw, 0f) * new Vector3(0f, 30f, 35f);
-        playerCamera.transform.position = transform.position + cameraOffset;
-        playerCamera.transform.LookAt(transform.position);
+    playerCamera.transform.position = transform.position + cameraOffset;
+    playerCamera.transform.LookAt(transform.position);
     }
 }
