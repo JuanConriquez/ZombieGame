@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using Unity.Netcode;
+using ZombieGame.Combat;
 
 /// <summary>
 /// Attach to any GameObject in your scene to act as a zombie factory.
@@ -62,12 +63,19 @@ public class ZombieSpawner : MonoBehaviour
     [Tooltip("Optional parent Transform to keep the hierarchy tidy.")]
     [SerializeField] private Transform zombieContainer;
 
+    [Header("Drops")]
+    [Tooltip("Chance (0–1) for an ammo pickup to spawn when a zombie dies.")]
+    [SerializeField, Range(0f, 1f)] private float ammoDropChance = 0.15f;
+    [Tooltip("Optional pickup prefab: trigger collider, AmmoBoxPickup, NetworkObject when using Netcode.")]
+    [SerializeField] private GameObject ammoPickupPrefab;
+    [SerializeField, Min(0f)] private float ammoPickupHeightOffset = 0.35f;
+
     [Header("Spawn Points")]
     public Transform[] spawnPoints;
 
     private Vector3 GetRandomSpawnPoint()
     {
-        if(spawnPoints.Length == 0)
+        if (spawnPoints == null || spawnPoints.Length == 0)
         {
             return transform.position;
         }
@@ -164,7 +172,11 @@ public class ZombieSpawner : MonoBehaviour
         // 5. Resolve chase target
         Transform chase = GetNearestPlayer(navPosition);
         if (chase == null)
-       
+        {
+            Destroy(go);
+            return null;
+        }
+
         // 6. Initialise stats
         zombie.Initialize(type, speed, health, chase);
 
@@ -245,8 +257,41 @@ public class ZombieSpawner : MonoBehaviour
 
     private void HandleZombieDeath(Zombie zombie)
     {
-        zombie.OnDeath -= HandleZombieDeath; // Unsubscribe to avoid leaks
+        zombie.OnDeath -= HandleZombieDeath;
+        TrySpawnAmmoPickup(zombie.transform.position);
         OnZombieDied?.Invoke(zombie);
+    }
+
+    private void TrySpawnAmmoPickup(Vector3 zombiePosition)
+    {
+        if (ammoDropChance <= 0f || Random.value > ammoDropChance) return;
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening && !NetworkManager.Singleton.IsServer)
+            return;
+
+        Vector3 spawnPos = zombiePosition + Vector3.up * ammoPickupHeightOffset;
+
+        if (ammoPickupPrefab != null)
+        {
+            GameObject pickup = Instantiate(ammoPickupPrefab, spawnPos, Quaternion.identity);
+            if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer && pickup.TryGetComponent<NetworkObject>(out NetworkObject netObj))
+                netObj.Spawn();
+            return;
+        }
+
+        GameObject fallback = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        fallback.name = "AmmoBoxPickup";
+        fallback.transform.position = spawnPos;
+        fallback.transform.localScale = new Vector3(0.45f, 0.3f, 0.45f);
+        fallback.GetComponent<Collider>().isTrigger = true;
+        Rigidbody rb = fallback.AddComponent<Rigidbody>();
+        rb.isKinematic = true;
+        rb.useGravity = false;
+        fallback.AddComponent<AmmoBoxPickup>();
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
+        {
+            NetworkObject netObj = fallback.AddComponent<NetworkObject>();
+            netObj.Spawn();
+        }
     }
 
     // ──────────────────────────────────────────────
