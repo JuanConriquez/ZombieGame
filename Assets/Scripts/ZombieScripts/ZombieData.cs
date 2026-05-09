@@ -1,12 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// ScriptableObject that stores the default stats for one zombie type.
-/// Create an asset per type: Assets > Create > Zombies > Zombie Data
-///
-/// Assign these assets in the ZombieSpawner Inspector slots so designers
-/// can tune balance without touching code.
-/// </summary>
 [CreateAssetMenu(menuName = "Zombies/Zombie Data", fileName = "ZombieData_New")]
 public class ZombieData : ScriptableObject
 {

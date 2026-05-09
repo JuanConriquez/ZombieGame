@@ -3,27 +3,10 @@ using UnityEngine.AI;
 using Unity.Netcode;
 using ZombieGame.Combat;
 
-/// <summary>
-/// Attach to any GameObject in your scene to act as a zombie factory.
-///
-/// Usage – call from anywhere:
-///   ZombieSpawner.Instance.Spawn(ZombieType.Runner, speed: 6f, health: 60f, position: spawnPoint.position);
-///   ZombieSpawner.Instance.Spawn(ZombieType.Tank,   speed: 2f, health: 400f, position: transform.position);
-///
-/// You can also call SpawnWithDefaults(ZombieType) to use the per-type
-/// default stats configured in the ZombieData ScriptableObjects.
-/// </summary>
 public class ZombieSpawner : MonoBehaviour
 {
-    // ──────────────────────────────────────────────
-    //  Singleton (optional convenience – remove if you prefer DI / service locator)
-    // ──────────────────────────────────────────────
 
     public static ZombieSpawner Instance { get; private set; }
-
-    // ──────────────────────────────────────────────
-    //  Inspector – prefab slots
-    // ──────────────────────────────────────────────
 
     [Header("Zombie Prefabs")]
     [Tooltip("Prefab for the Regular zombie. Must have a Zombie component.")]
@@ -38,19 +21,11 @@ public class ZombieSpawner : MonoBehaviour
     [Tooltip("Prefab for the Thrower zombie. Must have a Zombie component.")]
     [SerializeField] private GameObject throwerPrefab;
 
-    // ──────────────────────────────────────────────
-    //  Inspector – default stat overrides per type
-    // ──────────────────────────────────────────────
-
     [Header("Default Stats Per Type")]
     [SerializeField] private ZombieData regularData;
     [SerializeField] private ZombieData tankData;
     [SerializeField] private ZombieData runnerData;
     [SerializeField] private ZombieData throwerData;
-
-    // ──────────────────────────────────────────────
-    //  Inspector – gameplay
-    // ──────────────────────────────────────────────
 
     [Header("Gameplay")]
     [Tooltip("The Transform zombies will chase. Assign your player here.")]
@@ -86,19 +61,10 @@ public class ZombieSpawner : MonoBehaviour
     {
         return Spawn(type, speed, health, GetRandomSpawnPoint());
     }
-    // ──────────────────────────────────────────────
-    //  Events
-    // ──────────────────────────────────────────────
 
-    /// <summary>Fired every time a zombie is successfully spawned.</summary>
     public System.Action<Zombie> OnZombieSpawned;
 
-    /// <summary>Fires every time any zombie dies (forwarded from the Zombie's OnDeath event).</summary>
     public System.Action<Zombie> OnZombieDied;
-
-    // ══════════════════════════════════════════════
-    //  Unity lifecycle
-    // ══════════════════════════════════════════════
 
     private void Awake()
     {
@@ -110,13 +76,6 @@ public class ZombieSpawner : MonoBehaviour
         Instance = this;
     }
 
-    // ══════════════════════════════════════════════
-    //  Primary spawn API
-    // ══════════════════════════════════════════════
-
-    /// <summary>
-    /// Spawn a zombie with fully explicit stats.
-    /// </summary>
     /// <param name="type">Which zombie archetype to spawn.</param>
     /// <param name="speed">NavMesh movement speed.</param>
     /// <param name="health">Starting (and maximum) health.</param>
@@ -124,7 +83,6 @@ public class ZombieSpawner : MonoBehaviour
     /// <returns>The Zombie component on the new instance, or null if spawn failed.</returns>
     public Zombie Spawn(ZombieType type, float speed, float health, Vector3 position)
     {
-        // 1. Resolve prefab
         GameObject prefab = GetPrefab(type);
         if (prefab == null)
         {
@@ -133,7 +91,6 @@ public class ZombieSpawner : MonoBehaviour
             return null;
         }
 
-        // 2. Find a valid NavMesh position near the requested point
         if (!TryGetNavMeshPosition(position, out Vector3 navPosition))
         {
             Debug.LogWarning($"[ZombieSpawner] Could not find a NavMesh position near {position} " +
@@ -141,7 +98,6 @@ public class ZombieSpawner : MonoBehaviour
             return null;
         }
 
-        // 3. Instantiate
         Transform parent = zombieContainer != null ? zombieContainer : transform;
         GameObject go;
         if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
@@ -160,7 +116,6 @@ public class ZombieSpawner : MonoBehaviour
         }
         go.name = $"{type}_Zombie";
 
-        // 4. Get & validate the Zombie component
         if (!go.TryGetComponent<Zombie>(out var zombie))
         {
             Debug.LogError($"[ZombieSpawner] Prefab '{prefab.name}' is missing a Zombie component. " +
@@ -169,7 +124,6 @@ public class ZombieSpawner : MonoBehaviour
             return null;
         }
 
-        // 5. Resolve chase target
         Transform chase = GetNearestPlayer(navPosition);
         if (chase == null)
         {
@@ -177,22 +131,15 @@ public class ZombieSpawner : MonoBehaviour
             return null;
         }
 
-        // 6. Initialise stats
         zombie.Initialize(type, speed, health, chase);
 
-        // 7. Wire up death callback
         zombie.OnDeath += HandleZombieDeath;
 
-        // 8. Notify listeners
         OnZombieSpawned?.Invoke(zombie);
 
         return zombie;
     }
 
-    /// <summary>
-    /// Spawn a zombie using the default stats defined in its ZombieData ScriptableObject.
-    /// Useful for wave systems where you don't want to hard-code numbers.
-    /// </summary>
     /// <param name="type">Which zombie archetype to spawn.</param>
     /// <param name="position">World-space spawn position.</param>
     /// <returns>The Zombie component, or null if spawn failed.</returns>
@@ -210,21 +157,11 @@ public class ZombieSpawner : MonoBehaviour
         return Spawn(type, data.DefaultSpeed, data.DefaultHealth, position);
     }
 
-    /// <summary>
-    /// Convenience overload: spawn at a Transform's position.
-    /// </summary>
     public Zombie Spawn(ZombieType type, float speed, float health, Transform spawnPoint)
         => Spawn(type, speed, health, spawnPoint.position);
 
-    /// <summary>
-    /// Convenience overload: spawn with defaults at a Transform's position.
-    /// </summary>
     public Zombie SpawnWithDefaults(ZombieType type, Transform spawnPoint)
         => SpawnWithDefaults(type, spawnPoint.position);
-
-    // ══════════════════════════════════════════════
-    //  Internal helpers
-    // ══════════════════════════════════════════════
 
     private GameObject GetPrefab(ZombieType type) => type switch
     {
@@ -293,10 +230,6 @@ public class ZombieSpawner : MonoBehaviour
             netObj.Spawn();
         }
     }
-
-    // ──────────────────────────────────────────────
-    //  Built-in fallback defaults (used when no ZombieData SO is assigned)
-    // ──────────────────────────────────────────────
 
     private Transform GetNearestPlayer(Vector3 fromPosition)
     {

@@ -3,9 +3,6 @@ using UnityEngine.AI;
 using ZombieGame.Combat;
 using Unity.Netcode;
 
-/// <summary>
-/// The four zombie archetypes available in the game.
-/// </summary>
 public enum ZombieType
 {
     Regular,   // Balanced – average speed and health
@@ -14,25 +11,11 @@ public enum ZombieType
     Thrower    // Ranged attacker; keeps distance and lobs projectiles
 }
 
-/// <summary>
-/// Core zombie behaviour.
-/// Attach to a GameObject that also has a NavMeshAgent component.
-/// All per-type values (speed, health, attack) are set at spawn-time
-/// by ZombieSpawner — you can also tweak them at runtime if needed.
-/// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
 public class Zombie : MonoBehaviour, IDamageable
 {
-    // ──────────────────────────────────────────────
-    //  Identity
-    // ──────────────────────────────────────────────
 
-    /// <summary>Which archetype this zombie was spawned as.</summary>
     public ZombieType ZombieType { get; private set; }
-
-    // ──────────────────────────────────────────────
-    //  Stats (set via Initialize)
-    // ──────────────────────────────────────────────
 
     [Header("Runtime Stats (read-only in Inspector)")]
     [SerializeField, Min(0)] private float maxHealth = 100f;
@@ -42,22 +25,14 @@ public class Zombie : MonoBehaviour, IDamageable
     [SerializeField, Min(0)] private float attackRange = 2f;
     [SerializeField, Min(0)] private float attackCooldown = 1.5f;
 
-    // ──────────────────────────────────────────────
-    //  Thrower-specific
-    // ──────────────────────────────────────────────
-
     [Header("Thrower Settings")]
     [Tooltip("Prefab launched by Thrower zombies.")]
     [SerializeField] private GameObject projectilePrefab;
     [Tooltip("How far a Thrower tries to stay from the target.")]
     [SerializeField] private float preferredThrowDistance = 10f;
 
-    // ──────────────────────────────────────────────
-    //  Internal state
-    // ──────────────────────────────────────────────
-
     private NavMeshAgent agent;
-    private Transform target;          // Usually the player
+    private Transform target;
     private float attackTimer;
     private bool isDead;
     private float retargetTimer;
@@ -65,19 +40,9 @@ public class Zombie : MonoBehaviour, IDamageable
 
     private Animator animator;
 
-    // ──────────────────────────────────────────────
-    //  Events — subscribe in other systems as needed
-    // ──────────────────────────────────────────────
-
-    /// <summary>Fired when the zombie takes any damage.  Args: (damageAmount, remainingHealth)</summary>
     public System.Action<float, float> OnDamaged;
 
-    /// <summary>Fired once when health reaches 0.</summary>
     public System.Action<Zombie> OnDeath;
-
-    // ══════════════════════════════════════════════
-    //  Initialisation
-    // ══════════════════════════════════════════════
 
     private void Awake()
     {
@@ -85,10 +50,6 @@ public class Zombie : MonoBehaviour, IDamageable
         animator = GetComponentInChildren<Animator>();
     }
 
-    /// <summary>
-    /// Called by ZombieSpawner immediately after Instantiate.
-    /// Configures all stats and assigns the chase target.
-    /// </summary>
     /// <param name="type">Zombie archetype.</param>
     /// <param name="speed">Movement speed (applied to the NavMeshAgent).</param>
     /// <param name="health">Maximum (and starting) health.</param>
@@ -102,10 +63,8 @@ public class Zombie : MonoBehaviour, IDamageable
         target       = chaseTarget;
         isDead       = false;
 
-        // Push speed into the NavMeshAgent immediately
         agent.speed = moveSpeed;
 
-        // Per-type stat overrides – tweak these to balance your game
         switch (ZombieType)
         {
             case ZombieType.Regular:
@@ -137,10 +96,6 @@ public class Zombie : MonoBehaviour, IDamageable
                 break;
         }
     }
-
-    // ══════════════════════════════════════════════
-    //  Main Loop
-    // ══════════════════════════════════════════════
 
     private void Update()
     {
@@ -186,11 +141,6 @@ public class Zombie : MonoBehaviour, IDamageable
         }
     }
 
-    // ──────────────────────────────────────────────
-    //  Behaviour helpers
-    // ──────────────────────────────────────────────
-
-    /// <summary>Regular / Tank: walk straight at the player, melee on arrival.</summary>
     private void ChaseAndMelee(float distance)
     {
         agent.SetDestination(target.position);
@@ -201,7 +151,6 @@ public class Zombie : MonoBehaviour, IDamageable
         }
     }
 
-    /// <summary>Runner: same as melee but sprints; no special evasion.</summary>
     private void RunnerBehaviour(float distance)
     {
         agent.SetDestination(target.position);
@@ -212,10 +161,6 @@ public class Zombie : MonoBehaviour, IDamageable
         }
     }
 
-    /// <summary>
-    /// Thrower: maintain preferred throw distance, lob projectiles when in range.
-    /// If the player closes in, the Thrower backs up.
-    /// </summary>
     private void ThrowerBehaviour(float distance)
     {
         if (distance < preferredThrowDistance * 0.4f)
@@ -236,16 +181,10 @@ public class Zombie : MonoBehaviour, IDamageable
         }
     }
 
-    // ──────────────────────────────────────────────
-    //  Attack execution
-    // ──────────────────────────────────────────────
-
     private void PerformMeleeAttack()
     {
         attackTimer = 0f;
 
-        // Check the target and its parents for IDamageable
-        // because Health might be on the root player, not a child object
         IDamageable damageable = target.GetComponentInParent<IDamageable>();
         if (damageable != null)
         {
@@ -258,7 +197,6 @@ public class Zombie : MonoBehaviour, IDamageable
             Debug.LogWarning($"[Zombie] No IDamageable found on {target.name} or its parents!");
         }
 
-            // Hook: override or subscribe to add animations, sounds, particles
             OnMeleeAttack();
         }
 
@@ -268,11 +206,9 @@ public class Zombie : MonoBehaviour, IDamageable
 
         if (projectilePrefab != null)
         {
-            // Spawn above the zombie's centre and aim at the target
             Vector3 spawnPos = transform.position + Vector3.up * 1.5f;
             GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
 
-            // Assumes your projectile has a ZombieProjectile component
             if (proj.TryGetComponent<ZombieProjectile>(out var projectile))
             {
                 projectile.Launch(target.position, attackDamage);
@@ -282,11 +218,6 @@ public class Zombie : MonoBehaviour, IDamageable
         OnRangedAttack();
     }
 
-    // ══════════════════════════════════════════════
-    //  Health / Damage
-    // ══════════════════════════════════════════════
-
-    /// <summary>Apply damage to this zombie. Returns true if the hit was lethal.</summary>
     public bool TakeDamage(float damage)
     {
         if (isDead) return false;
@@ -305,7 +236,6 @@ public class Zombie : MonoBehaviour, IDamageable
         return false;
     }
 
-    /// <summary>Instantly kill the zombie (e.g. triggered by a hazard).</summary>
     public void InstantKill()
     {
         if (!isDead) Die();
@@ -323,45 +253,21 @@ public class Zombie : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    // ══════════════════════════════════════════════
-    //  Overridable hooks (subclass or extend as needed)
-    // ══════════════════════════════════════════════
-
-    /// <summary>Called every time this zombie performs a melee attack.</summary>
     protected virtual void OnMeleeAttack() { }
 
-    /// <summary>Called every time this zombie performs a ranged attack.</summary>
     protected virtual void OnRangedAttack() { }
 
-    /// <summary>Called when health hits zero, before the GameObject is destroyed.</summary>
     protected virtual void OnDeathBehaviour() { }
-
-    // ══════════════════════════════════════════════
-    //  Public accessors
-    // ══════════════════════════════════════════════
 
     public float CurrentHealth => currentHealth;
     public float MaxHealth     => maxHealth;
     public float HealthPercent => maxHealth > 0 ? currentHealth / maxHealth : 0f;
     public bool  IsDead        => isDead;
 
-    // ══════════════════════════════════════════════
-    //  IDamageable (ZombieGame.Combat)
-    //  Makes this zombie a valid target for WeaponController's bullet raycasts.
-    // ══════════════════════════════════════════════
-
-    /// <summary>Team 1 = enemies. Prevents friendly-fire between zombies.</summary>
     public int  TeamId  => 1;
 
-    /// <summary>Required by IDamageable; mirrors the internal isDead flag.</summary>
     public bool IsAlive => !isDead;
 
-    /// <summary>
-    /// Called by WeaponController when a bullet hits this zombie.
-    /// Bridges the combat system's damage pipeline into the zombie's own health logic.
-    /// hitPoint and hitNormal are available here if you want to add hit reactions,
-    /// directional ragdoll forces, or headshot detection later.
-    /// </summary>
     public void ApplyDamage(float amount, GameObject source, Vector3 hitPoint, Vector3 hitNormal)
     {
         TakeDamage(amount);
@@ -388,7 +294,6 @@ public class Zombie : MonoBehaviour, IDamageable
 
     }
 
-    /// <summary>Swap the chase target at runtime (e.g. player dies, new target assigned).</summary>
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
